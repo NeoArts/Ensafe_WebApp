@@ -1,8 +1,10 @@
+import NabBar from './components/NavBar'
+import styles from './styles/styles.css'
 
 function App() {
   return (
     <div>
-      <h1>Inserta acá el contenido</h1>
+      <NabBar />
     </div>
   );
 }
