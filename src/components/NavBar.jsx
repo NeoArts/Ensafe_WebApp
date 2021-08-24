@@ -1,85 +1,118 @@
 import React from 'react'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faHeart, faShoppingCart, } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons'
-import hands from '../images/hands.png'
+import { useState } from 'react'
+import logoSVG from '../images/logoSVG.svg'
+import Menu from './Menu'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from 'react-router-dom'
+import { createBrowserHistory } from 'history'
 
 function NavBar() {
+
+    const history = createBrowserHistory({ forceRefresh: true })
+
+    const redirectPage = (number) => {
+        switch (number) {
+            case (0):
+                history.push('/')
+                break;
+            case (1):
+                history.push('/products')
+                break;
+            case (2):
+                history.push('/pqrs')
+                break;
+            case (3):
+                history.push('/privacy-policy')
+                break;
+            case (4):
+                history.push('/contact-us')
+                break;
+        }
+    }
+
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const changeMenuState = () => {
+
+        var menu = document.getElementById('menu');
+        var menuTop = document.getElementsByClassName('top')[0];
+        var menuMiddle = document.getElementsByClassName('middle')[0];
+        var menuBottom = document.getElementsByClassName('bottom')[0];
+
+        if (menuOpen) {
+            setMenuOpen(false);
+            menu.style.right = '-9999px';
+            menuTop.classList.remove('rotate-right');
+            menuMiddle.classList.remove('disappear');
+            menuBottom.classList.remove('rotate-left');
+        }
+        else {
+            setMenuOpen(true);
+            menu.style.right = '0px';
+            menuTop.classList.add('rotate-right');
+            menuMiddle.classList.add('disappear');
+            menuBottom.classList.add('rotate-left');
+        }
+    }
+
+    const setMenuState = () => {
+
+        setMenuOpen(false);
+
+        var menuIcon = document.getElementById('menu-icon');
+        var menu = document.getElementById('menu');
+        var menuItems = document.getElementsByClassName('menu__item');
+
+        if (window.innerWidth < 1110) {
+            menuIcon.style.visibility = 'visible';
+            menu.classList.remove('menu-horizontal');
+            menu.classList.add('absolute-item');
+            menu.style.right = '-9999px';
+            menu.style.top = '5.1688em';
+            menu.style.width = '100%';
+            menu.style.background = '#F6F7FB'
+            menu.style.padding = '1em 0em'
+
+            for (var i = 0; i < menuItems.length; i++) {
+                menuItems[i].classList.add('menu-vertical');
+                menuItems[i].style.marginRight = '1.875em';
+            }
+
+        }
+        else {
+            menuIcon.style.visibility = 'hidden';
+            menu.classList.add('menu-horizontal');
+            menu.classList.remove('absolute-item');
+            for (var i = 0; i < menuItems.length; i++) {
+                menuItems[i].style.marginRight = '0em';
+            }
+        }
+    }
+
+    window.addEventListener('resize', setMenuState);
+    window.addEventListener('load', setMenuState);
+
     return (
         <div>
-            <header className="header">
-                <section className="header__container">
-                    <div className="header__controls-container">
-                        <div className="header__menu-container">
-                            <a href="#" className="menu-icon center-item">
-                                <div className="menu-icon__top"></div>
-                                <div className="menu-icon__middle"></div>
-                                <div className="menu-icon__bottom"></div>
-                            </a>
-                        </div>
-                        <div className="header__logo-container">
-                            <h1 className="logo">ENSAFE</h1>
-                        </div>
+            <div className="nav" id="nav">
+                <div className="nav__container">
+                    <Router>
+                        <Link to="/" onClick={() => redirectPage(0)}>
+                            <img src={logoSVG} alt="Ensafe SAS logo" className="logo" />
+                        </Link>
+                    </Router>
+                    <Menu className="menu-horizontal" />
+                    <div className="menu-icon" id="menu-icon" onClick={() => changeMenuState()}>
+                        <div className="menu-icon__bar top"></div>
+                        <div className="menu-icon__bar middle"></div>
+                        <div className="menu-icon__bar bottom"></div>
                     </div>
-                    <div className="header__shop-menu-container">
-                        <nav className="shop-menu">
-                            <ul className="shop-menu__items">
-                                <li className="shop-menu__item">
-                                    <FontAwesomeIcon icon={faSearch} className="shop-menu__item-icon" />
-                                </li>
-                                <li className="shop-menu__item">
-                                    <FontAwesomeIcon icon={faHeart} className="shop-menu__item-icon" />
-                                </li>
-                                <li className="shop-menu__item">
-                                    <FontAwesomeIcon icon={faShoppingCart} className="shop-menu__item-icon" />
-                                </li>
-                                <li className="shop-menu__item">
-                                    <a href="#" className="shop-menu__login">Iniciar</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </section>
-            </header>
-            <section className="sidebar-social">
-                <div className="sidebar-social__container">
-                    <ul className="sidebar-social__items">
-                        <li className="sidebar-social__item">
-                            <FontAwesomeIcon icon={faFacebook} size='2x' className="sidebar-social__item-icon" />
-                        </li>
-                        <li className="sidebar-social__item">
-                            <FontAwesomeIcon icon={faInstagram} size='2x' className="sidebar-social__item-icon" />
-                        </li>
-                        <li className="sidebar-social__item">
-                            <FontAwesomeIcon icon={faLinkedin} size='2x' className="sidebar-social__item-icon" />
-                        </li>
-                        <li className="sidebar-social__item">
-                            <FontAwesomeIcon icon={faYoutube} size='2x' className="sidebar-social__item-icon" />
-                        </li>
-                    </ul>
                 </div>
-            </section>
-            <section className="main-section">
-                <div className="main-section__container">
-                    <div className="main-section__feature-product">
-                        <div className="generic-info half-width-item">
-                            <h1 className="generic-info__title">Protección para manos</h1>
-                            <p className="generic-info__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quasi maiores perspiciatis expedita excepturi aspernatur placeat cumque minima corporis consequatur.</p>
-                            <a href="#" className="outline-button">Ver colección</a>
-                        </div>
-                    </div>
-                    {/* <div className="presentation-card absolute-item">
-                        <div className="presentation-card__logo-container">
-                            <h2 className="presentation-card__logo">ENSAFE</h2>
-                        </div>
-                        <div className="presentation-card__title-container">
-                            <h2 className="presentation-card__title">CABEZA</h2>
-                        </div>
-                    </div> */}
-                    {/* <img src="#" alt="main-image-1" className="main-section__image" /> */}
-                </div>
-            </section>
+            </div>
         </div>
     )
 }
