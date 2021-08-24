@@ -1,8 +1,11 @@
 import React from 'react'
+import Footer from './Footer'
+import NavBar from './NavBar'
 
 function ContactUs() {
     return (
         <div>
+            <NavBar />
             <section className="contact-us">
                 <div className="form__container">
                     <h1 className="form-title">Formulario de contácto</h1>
@@ -22,6 +25,7 @@ function ContactUs() {
                     </form>
                 </div>
             </section>
+            <Footer />
         </div>
     )
 }

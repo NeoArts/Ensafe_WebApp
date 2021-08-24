@@ -1,8 +1,11 @@
 import React from 'react'
+import Footer from './Footer'
+import NavBar from './NavBar'
 
 function Pqrspage() {
     return (
         <div>
+            <NavBar />
             <section className="pqrs">
                 <div className="form__container">
                     <h1 className="form-title">Formulario de peticiones, quejas, reclamos o sugerencias</h1>
@@ -28,6 +31,7 @@ function Pqrspage() {
                     </form>
                 </div>
             </section>
+            <Footer />
         </div>
     )
 }

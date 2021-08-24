@@ -1,8 +1,11 @@
 import React from 'react'
+import Footer from './Footer'
+import NavBar from './NavBar'
 
 function PrivacyPolicyPage() {
     return (
         <div>
+            <NavBar />
             <section className="privacy-policy">
                 <div className="privacy-policy__container">
                     <h2 className="privacy-policy__title">POLÍTICA DE PRIVACIDAD</h2>
@@ -24,6 +27,7 @@ function PrivacyPolicyPage() {
                         <br />Esta política de privacidad se ha generado en politicadeprivacidadplantilla.com.</p>
                 </div>
             </section>
+            <Footer />
         </div>
     )
 }

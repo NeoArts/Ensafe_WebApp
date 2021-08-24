@@ -7,6 +7,11 @@ import {
     Link
 } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
+import Homepage from './Homepage'
+import Productspage from './ProductsPage'
+import Pqrspage from './PqrsPage'
+import PrivacyPolicyPage from './PrivacyPolicyPage'
+import ContactUs from './ContactUs'
 
 class Menu extends Component {
 
@@ -35,27 +40,46 @@ class Menu extends Component {
         }
 
         return (
-            <Router>
-                <nav>
-                    <ul className={"menu " + this.props.className} id="menu">
-                        <li className={"menu__item " + this.props.modificator}>
-                            <Link to="/" className="menu__link" onClick={() => redirectPage(0)}>Inicio</Link>
-                        </li>
-                        <li className={"menu__item " + this.props.modificator}>
-                            <Link to="/products" className="menu__link" onClick={() => redirectPage(1)}>Productos</Link>
-                        </li>
-                        <li className={"menu__item " + this.props.modificator}>
-                            <Link to="/pqrs" className="menu__link" onClick={() => redirectPage(2)}>PQRS</Link>
-                        </li>
-                        <li className={"menu__item " + this.props.modificator}>
-                            <Link to="/privacy-policy" className="menu__link" onClick={() => redirectPage(3)}>Política de privacidad</Link>
-                        </li>
-                        <li className="menu__item">
-                            <Link to="/contact-us" className="menu__link" onClick={() => redirectPage(4)}>Contáctenos</Link>
-                        </li>
-                    </ul>
-                </nav>
-            </Router>
+            <div>
+                <div>
+                    <nav>
+                        <ul className={"menu " + this.props.className} id="menu">
+                            <li className={"menu__item " + this.props.modificator}>
+                                <Link to="/" className="menu__link">Inicio</Link>
+                            </li>
+                            <li className={"menu__item " + this.props.modificator}>
+                                <Link to="/products" className="menu__link">Productos</Link>
+                            </li>
+                            <li className={"menu__item " + this.props.modificator}>
+                                <Link to="/pqrs" className="menu__link">PQRS</Link>
+                            </li>
+                            <li className={"menu__item " + this.props.modificator}>
+                                <Link to="/privacy-policy" className="menu__link">Política de privacidad</Link>
+                            </li>
+                            <li className="menu__item">
+                                <Link to="/contact-us" className="menu__link">Contáctenos</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                {/* <Switch>
+                    <Route exact path="/">
+                        <Homepage />
+                    </Route>
+                    <Route exact path="/products">
+                        <Productspage />
+                    </Route>
+                    <Route exact path="/pqrs">
+                        <Pqrspage />
+                    </Route>
+                    <Route exact path="/privacy-policy">
+                        <PrivacyPolicyPage />
+                    </Route>
+                    <Route exact path="/contact-us">
+                        <ContactUs />
+                    </Route>
+                </Switch> */}
+            </div>
         )
     }
 }

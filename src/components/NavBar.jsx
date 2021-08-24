@@ -100,11 +100,9 @@ function NavBar() {
         <div>
             <div className="nav" id="nav">
                 <div className="nav__container">
-                    <Router>
-                        <Link to="/" onClick={() => redirectPage(0)}>
-                            <img src={logoSVG} alt="Ensafe SAS logo" className="logo" />
-                        </Link>
-                    </Router>
+                    <Link to="/">
+                        <img src={logoSVG} alt="Ensafe SAS logo" className="logo" />
+                    </Link>
                     <Menu className="menu-horizontal" />
                     <div className="menu-icon" id="menu-icon" onClick={() => changeMenuState()}>
                         <div className="menu-icon__bar top"></div>
