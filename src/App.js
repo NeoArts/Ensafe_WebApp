@@ -12,15 +12,15 @@ import SocialMediaFloatingBanner from './components/SocialMediaFloatingBanner'
 function App() {
   return (
     <div>
-      <HashRouter>
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route exact path="/products" component={ProductsPage} />
-          <Route exact path="/pqrs" component={PqrsPage} />
-          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-          <Route exact path="/contact-us" component={ContactUs} />
-        </Switch>
-      </HashRouter>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Homepage} />
+        <Route exact path="/products" component={ProductsPage} />
+        <Route exact path="/pqrs" component={PqrsPage} />
+        <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+        <Route exact path="/contact-us" component={ContactUs} />
+      </Switch>
+      <Footer />
     </div>
   );
 }

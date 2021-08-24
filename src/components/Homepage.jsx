@@ -73,7 +73,6 @@ function Homepage() {
 
     return (
         <div>
-            <NavBar />
             <section className="featured-product" id="featured-product">
                 <div className="featured-product__container">
                     <img src={slideImage[position]} alt="Ensafe SAS products" className="featured-product__image" />
@@ -194,7 +193,6 @@ function Homepage() {
                 </div>
                 <Divider title="Subir" className="relative-item margin-right" up={true} color="#2A2E92" id="up-divider" />
             </section>
-            <Footer />
         </div>
     )
 }
