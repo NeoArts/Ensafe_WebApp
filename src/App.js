@@ -13,6 +13,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <SocialMediaFloatingBanner />
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/products" component={ProductsPage} />
