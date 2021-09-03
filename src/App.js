@@ -1,18 +1,23 @@
-import React from 'react'
-import Homepage from './components/Homepage'
-import ProductsPage from './components/ProductsPage'
-import PqrsPage from './components/PqrsPage'
-import PrivacyPolicy from './components/PrivacyPolicyPage'
-import ContactUs from './components/ContactUs'
-import Navbar from './components/NavBar'
-import Footer from './components/Footer'
-import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom'
+import React, { Suspense } from 'react'
+import Homepage from './components/Homepage/Homepage'
+import ProductsPage from './components/ProductsPage/ProductsPage'
+import PqrsPage from './components/PqrsPage/PqrsPage'
+import PrivacyPolicy from './components/PrivacyPolicyPage/PrivacyPolicyPage'
+import ContactUs from './components/ContactUsPage/ContactUs'
+import Navbar from './components/Navbar/NavBar'
+import { Route, Switch } from 'react-router-dom'
 import SocialMediaFloatingBanner from './components/SocialMediaFloatingBanner'
 
 function App() {
+
+  const LazyFooter = React.lazy(() => import('./components/Footer/Footer'));
+  const LazyNavbar = React.lazy(() => import('./components/Navbar/NavBar'));
+
   return (
     <div>
-      <Navbar />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyNavbar />
+      </Suspense>
       <SocialMediaFloatingBanner />
       <Switch>
         <Route exact path="/" component={Homepage} />
@@ -21,7 +26,9 @@ function App() {
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
         <Route exact path="/contact-us" component={ContactUs} />
       </Switch>
-      <Footer />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyFooter />
+      </Suspense>
     </div>
   );
 }

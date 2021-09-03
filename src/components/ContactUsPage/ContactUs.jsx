@@ -1,14 +1,17 @@
-import React from 'react'
-import Footer from './Footer'
-import NavBar from './NavBar'
+import React, { useEffect } from 'react'
 
-function Pqrspage() {
+function ContactUs() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div>
-            <section className="pqrs">
+            <section className="contact-us">
                 <div className="form__container">
-                    <h1 className="form-title">Formulario de peticiones, quejas, reclamos o sugerencias</h1>
-                    <p className="form-description">Por favor completa todos los campos, recibiremos la información proporcionada y responderemos en el menor tiempo posible. </p>
+                    <h1 className="form-title">Formulario de contácto</h1>
+                    <p className="form-description">Completa los datos y nos comunicaremos con tigo lo más rapido posible </p>
                     <form action="post" className="form">
                         <label htmlFor="name">Nombre</label><br />
                         <input name="name" type="text" id="name" className="input" /><br />
@@ -17,13 +20,7 @@ function Pqrspage() {
                         <label htmlFor="phone">Teléfono</label><br />
                         <input name="phone" type="text" id="phone" className="input" /><br />
                         <label htmlFor="subject">Asunto</label><br />
-                        <select name="subject" id="subject" className="input"><br />
-                            <option value="">Escoge un asunto</option>
-                            <option value="petition">Petición</option>
-                            <option value="complain">Queja</option>
-                            <option value="claim">Reclamo</option>
-                            <option value="suggestion">Sugerencia</option>
-                        </select><br />
+                        <input name="subject" type="text" id="subject" className="input menu-vertical" />
                         <label htmlFor="message">Mensage</label><br />
                         <textarea name="message" className="input" id="message" cols="30" rows="10">Hola Ensafe!, </textarea><br />
                         <input value="Enviar" type="submit" className="main-button full-width" />
@@ -34,4 +31,4 @@ function Pqrspage() {
     )
 }
 
-export default Pqrspage
+export default ContactUs

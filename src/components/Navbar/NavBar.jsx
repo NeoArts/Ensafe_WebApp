@@ -1,38 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
-import logoSVG from '../images/logoSVG.svg'
-import Menu from './Menu'
+import logoSVG from '../../images/logoSVG.svg'
+import Menu from '../Menu'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
 } from 'react-router-dom'
-import { createBrowserHistory } from 'history'
 
 function NavBar() {
-
-    const history = createBrowserHistory({ forceRefresh: true })
-
-    const redirectPage = (number) => {
-        switch (number) {
-            case (0):
-                history.push('/')
-                break;
-            case (1):
-                history.push('/products')
-                break;
-            case (2):
-                history.push('/pqrs')
-                break;
-            case (3):
-                history.push('/privacy-policy')
-                break;
-            case (4):
-                history.push('/contact-us')
-                break;
-        }
-    }
 
     const [menuOpen, setMenuOpen] = useState(false);
 
