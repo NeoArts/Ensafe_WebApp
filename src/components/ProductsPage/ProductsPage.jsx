@@ -1,8 +1,11 @@
-import React from 'react'
-import Footer from './Footer'
-import NavBar from './NavBar'
+import React, { useEffect } from 'react'
 
 function Productspage() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div>
             <section className="products">
