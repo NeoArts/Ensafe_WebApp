@@ -11973,7 +11973,7 @@ fieldset:disabled .btn {
 body {
   margin: 0;
   padding: 0;
-  font: 24px 'Gilroy', sans-serif;
+  font: 22px 'Gilroy', sans-serif;
   font-display: swap;
   background-color: #F6F7FB;
   scroll-behavior: smooth;
@@ -12536,7 +12536,6 @@ a {
   width: 100%;
   height: calc(100vh - 5.1688em);
   min-height: 35em;
-  position: relative;
 }
 
 .who-we-are__info-container {
@@ -12686,6 +12685,7 @@ a {
 }
 
 .company__info {
+  width: 50%;
   margin-left: 2.5em;
 }
 
@@ -13173,6 +13173,12 @@ a {
   }
 }
 
+@media only screen and (max-height: 45em) {
+  .our-products {
+    height: auto;
+  }
+}
+
 @media only screen and (max-height: 37.5em) {
   .mission-vision {
     height: auto;
@@ -13266,6 +13272,9 @@ a {
   }
   .featured-product__controls {
     display: none;
+  }
+  .featured-product__info {
+    text-align: center;
   }
   .info {
     margin-left: 2.5em;
