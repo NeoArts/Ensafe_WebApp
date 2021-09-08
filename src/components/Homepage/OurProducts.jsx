@@ -15,26 +15,26 @@ function OurProducts() {
             </div>
             <div className="grid">
                 <div className="grid__container">
-                    <a className="grid__item">
+                    <button className="grid__item transparent-background">
                         <img src={helmet} alt="" className="grid__image" />
                         <p className="grid__title">Protección de cabeza</p>
-                    </a>
-                    <a className="grid__item">
+                    </button>
+                    <button className="grid__item transparent-background">
                         <img src={boots} alt="" className="grid__image" />
                         <p className="grid__title">Protección de pies</p>
-                    </a>
-                    <a className="grid__item">
+                    </button>
+                    <button className="grid__item transparent-background">
                         <img src={clip} alt="" className="grid__image" />
                         <p className="grid__title">Protección anticaída</p>
-                    </a>
-                    <a className="grid__item">
+                    </button>
+                    <button className="grid__item transparent-background">
                         <img src={lifeJacket} alt="" className="grid__image" />
                         <p className="grid__title">Protección de cuerpo</p>
-                    </a>
-                    <a className="grid__item">
+                    </button>
+                    <button className="grid__item transparent-background">
                         <img src={gloves} alt="" className="grid__image" />
                         <p className="grid__title">Protección de manos</p>
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>

@@ -61,8 +61,8 @@ function NavBar() {
             menuIcon.style.visibility = 'hidden';
             menu.classList.add('menu-horizontal');
             menu.classList.remove('absolute-item');
-            for (var i = 0; i < menuItems.length; i++) {
-                menuItems[i].style.marginRight = '0em';
+            for (var j = 0; j < menuItems.length; j++) {
+                menuItems[j].style.marginRight = '0em';
             }
         }
     }

@@ -1,3 +1,14 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+@font-face {  
+  font-family: 'Gilroy'; 
+  src: url('/src/assets/fonts/Gilroy-Regular.woff') format('woff'); 
+  font-weight: normal; 
+  font-style: normal;
+  font-display: swap;
+  letter-spacing: 0.1875em;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                  variables                                 */
 /* -------------------------------------------------------------------------- */
@@ -34,6 +45,10 @@ body{
 
 a{
   text-decoration: none;
+}
+
+a:hover{
+  
 }
 
 /* -------------------------------------------------------------------------- */
@@ -90,6 +105,7 @@ a{
   display: inline;;
   color: $darkblue-primary;
   margin-right: 0.625em;
+  margin-bottom: 0;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -130,6 +146,7 @@ a{
 .social-media__link{
   text-decoration: none;
   color: $darkblue-primary;
+  border: none;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -137,7 +154,7 @@ a{
 /* -------------------------------------------------------------------------- */
 
 .nav{
-  width: 100%;
+  width: 100% !important;
   height: 5.1688em;
   position: fixed;
   box-shadow: 0 0 0.0625em $gray;
@@ -146,8 +163,9 @@ a{
 }
 
 .nav__container{
-  display: flex;
-  justify-content: space-between;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
   align-items: center;
   padding: 0.625em 6.25em;
   position: relative;
@@ -155,6 +173,7 @@ a{
 
 .logo{
   width: 18.75em;
+  padding: 0 !important;
   border-radius: 0.5em;
   padding: 0.3125em 0.625em;
   aspect-ratio: 64/11;
@@ -162,11 +181,14 @@ a{
 
 #menu{
   transition: all 300ms ease-in-out;
+  padding-left: 0;
+  margin-bottom: 0;
 }
 
 .menu-horizontal{
   display: flex;
   align-items: center;
+  margin: 0;
 }
 
 .menu-vertical{
@@ -210,7 +232,7 @@ a{
 
 .top,
 .middle,
-.bottom{
+.bottom{  
   transition: all 300ms ease-in-out;
 }
 
@@ -260,10 +282,12 @@ a{
 .divider__title{
   margin-top: 0.3125em;
   margin-right: 0.625em;
-  
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 .divider__icon{
+  margin-bottom: 10px;
   transition: 300ms;
 }
 
@@ -290,24 +314,53 @@ a{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
+} 
 
-.featured-product__image{
+.carousel{
   width: 100%;
   margin-top: 5.1688em;
   height: calc(70vh - 5.1688em);
   min-height: 19.875em;
+}
+
+.carousel-item{
+  height: calc(70vh - 5.1688em);
+  transition: all 600ms ease-in-out;
+  background-color: #000000;
+}
+
+.carousel .carousel-indicators li {
+  width: 3%;
+  height: 3px;
+  border-radius: 8px;
+  margin: 0px 2px;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.carousel .carousel-indicators li:hover{
+  cursor: pointer;
+}
+
+.carousel .carousel-indicators .active {
+  background-color: #fff;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+  width: 8%;
+} 
+
+.featured-product__image{
+  width: 100%;
+  height: calc(70vh - 5.1688em);
+  min-height: 19.875em;
   object-fit: cover;
-  transition: all ease-in-out 200ms;
 }
 
 .featured-product__info{
   height: calc(70vh - 5.1688em);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   width: 100%;
-  margin-top: 5.1688em;
   min-height: 19.875em;
   position: absolute;
   top: 0;
@@ -317,29 +370,32 @@ a{
 }
 
 .info{
-  width: 18.75em;
+  
   margin-left: 6.25em;
-  margin-bottom: 2.5em;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   border: solid 0.0625em $white;
   padding: 1.25em;
   border-radius: 0.5em;
   background-color: $light-hover;
+  position: relative;
+  top: 40%;
 }
 
 .info-category{
+  width: auto;
   color: $darkblue-primary;
   background-color: $white;
   padding: 0.3125em 1.25em;
   margin-bottom: 0.625em;
   border-radius: 0.5em;
-  font-size: 1.375em;
+  font-size: 1.375em !important;
+  font-weight: bold;
 }
 
 .info-description{
   margin-bottom: 0.625em;
-}
+} 
 
 .featured-product__controls{
   padding: 0em 0.625em;
@@ -366,7 +422,7 @@ a{
 .featured-product__prev:hover{
   cursor: pointer;
   color: white;
-}
+} 
 
 /* -------------------------- Our products section -------------------------- */
 
@@ -404,6 +460,7 @@ a{
   font-weight: bold;
   color: $white;
   border-radius: 0.5em;
+  margin: 0;
 }
 
 .our-products__description{
@@ -445,6 +502,8 @@ a{
 
 .grid__title{
   font-size: 1em;
+  color: $black;
+  margin-bottom: 0;
 }
 
 /* --------------------------- who we are section --------------------------- */
@@ -459,7 +518,7 @@ a{
 .who-we-are__info-container{
   height: calc(100vh - 5.1688em);
   min-height: 35em;
-  background-image: linear-gradient(to left, #09376B /*001022*/ 50%, #00000000), none;
+  background-image: linear-gradient(to left, #09376B /*001022*/ 50%, #00000000), url('../images/workplace.webp');
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -467,11 +526,6 @@ a{
   align-items: flex-end;
   padding: 0em 6.25em;
 }
-
-.who-we-are__info-container.lazy{
-  background-image: linear-gradient(to left, #09376B /*001022*/ 50%, #00000000), url('../images/workplace.webp')
-}
-
 .who-we-are__info{
   width: 40%;
   color: $white;
@@ -481,6 +535,7 @@ a{
 .who-we-are__title{
   font-size: 2em;
   margin-bottom: 0.625em;
+  font-weight: bold;
 }
 
 .who-we-are__description{
@@ -574,8 +629,15 @@ a{
   margin-bottom: 0.625em;
 }
 
-.company__info h6{
+.company__info .card__title{
+  font-size: 1.375em;
+  font-weight: bold;
+  margin-bottom: 0.625em;
+}
+
+.company__info .card__subtitle{
   font-size: 1.125em;
+  font-weight: bold;
 }
 
 .company__info hr{
@@ -589,6 +651,8 @@ a{
   border-radius: 0.5em;
   color: white;
   margin-bottom: 1.25em;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .company__description{
@@ -596,11 +660,25 @@ a{
 }
 
 .presentation-card{
-  height: 14.6875em;
+  height: auto;
   background: $white;
   box-shadow: 0 0 0.3125em $gray;
   border-radius: 0.5em;
   padding: 1.25em;
+}
+
+.presentation-card h4{
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.presentation-card h6{
+  margin: 0;
+  font-weight: bold;
+}
+
+.presentation-card p{
+  margin: 0;
 }
 
 .company__map{
@@ -654,6 +732,7 @@ a{
   border-radius: 0.5em;
   padding: 0.625em;
   color: $darkblue-primary;
+  margin: 0;
   margin-top: 0.625em;
 }
 
@@ -679,6 +758,12 @@ a{
   border-radius: 0.5em;
   color: $darkblue-primary;
   margin-bottom: 1.25em;
+}
+
+.footer__social .footer__social-media-text{
+  margin: 0;
+  margin-left: 0.3125em;
+  font-weight: bold;
 }
 
 .facebook{
@@ -847,15 +932,19 @@ a{
   margin-right: 6.25em;
 }
 
+.transparent-background{
+  background: $white;
+}
+
 @media only screen and (max-width: 1820px){
   body{
-    font-size: 16px;
+    font-size: 16px !important;
   }
 }
 
 @media only screen and (max-width: 1140px){
   body{
-    font-size: 14px;
+    font-size: 14px !important;
   }
 
   .menu-icon{
@@ -910,7 +999,12 @@ a{
   }
 
   .info{
+    top: 1.25em;
+    padding: 0;
     margin-left: 2.5em;
+    background: transparent;
+    border: none;
+    justify-content: space-between;
   }
 
   .our-products{
@@ -1026,6 +1120,10 @@ a{
     display: none;
   }
 
+  .carousel{
+    height: calc(50vh - 5.1688em);
+  }
+
   .featured-product__image{
     height: calc(50vh - 5.1688em);
   }
@@ -1048,8 +1146,7 @@ a{
     margin-bottom: 1.875em;
   }
 
-  .who-we-are__info-container.lazy{
-    background-image: linear-gradient(to left, #09376B /*001022*/ 70%, #0809376B), url('../images/workplace.webp');
+  .who-we-are__info-container{
     padding: 0em 2.5em;
   }
 
@@ -1078,7 +1175,7 @@ a{
 @media only screen and (max-width: 520px){
   .logo{
     width: 12.5em;
-    margin-top: 0.625em;
+    margin-top: 0em;
   }
 
   .title-gradient-background{
@@ -1121,17 +1218,16 @@ a{
   }
 
   .featured-product__info{
-    align-items: center;
   }
 
   .info{
-    margin-left: 0em;
-    margin-bottom: 2.5em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
   }
 
-  .who-we-are__info-container.lazy{
+  .who-we-are__info-container{
+    background-image: linear-gradient(to left, #09376b9c /*001022*/ 50%, #09376b9c), url('../images/workplace.webp');
     justify-content: center;
-    background-image: linear-gradient(to left, #09376bbd /*001022*/ 70%, #09376bbd), url('../images/workplace.webp');
   }
 
   .who-we-are__info{

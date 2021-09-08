@@ -34,6 +34,12 @@ const scrollWindow = (id) => {
                 behavior: 'smooth'
             });
             break;
+        default:
+            window.scroll({
+                top: document.getElementById("featured-product").offsetTop - document.getElementById("nav").clientHeight,
+                behavior: 'smooth'
+            });
+            break;
     }
 }
 
