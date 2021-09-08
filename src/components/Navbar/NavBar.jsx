@@ -43,6 +43,7 @@ function NavBar() {
 
         if (window.innerWidth < 1110) {
             menuIcon.style.visibility = 'visible';
+            menu.style.visibility = 'hidden';
             menu.classList.remove('menu-horizontal');
             menu.classList.add('absolute-item');
             menu.style.right = '-9999px';
@@ -59,6 +60,7 @@ function NavBar() {
         }
         else {
             menuIcon.style.visibility = 'hidden';
+            menu.style.visibility = 'visible';
             menu.classList.add('menu-horizontal');
             menu.classList.remove('absolute-item');
             for (var j = 0; j < menuItems.length; j++) {

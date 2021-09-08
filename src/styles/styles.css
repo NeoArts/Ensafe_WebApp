@@ -12141,6 +12141,7 @@ a {
   transition: all 300ms ease-in-out;
   padding-left: 0;
   margin-bottom: 0;
+  visibility: hidden;
 }
 
 .menu-horizontal {
@@ -13164,6 +13165,7 @@ a {
             flex-direction: column-reverse;
   }
   .company__info {
+    width: 100%;
     margin-left: 0em;
   }
   .company__map {
