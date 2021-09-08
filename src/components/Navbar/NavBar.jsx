@@ -20,12 +20,14 @@ function NavBar() {
         if (menuOpen) {
             setMenuOpen(false);
             menu.style.right = '-9999px';
+            menu.style.visibility = 'hidden';
             menuTop.classList.remove('rotate-right');
             menuMiddle.classList.remove('disappear');
             menuBottom.classList.remove('rotate-left');
         }
         else {
             setMenuOpen(true);
+            menu.style.visibility = 'visible';
             menu.style.right = '0px';
             menuTop.classList.add('rotate-right');
             menuMiddle.classList.add('disappear');
