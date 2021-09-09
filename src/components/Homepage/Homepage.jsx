@@ -14,20 +14,6 @@ function Homepage() {
     const LazyMissionVision = React.lazy(() => import('./MissionVison'));
     const LazyCompany = React.lazy(() => import('./Company'));
 
-    function lazyLoading() {
-        if (document.getElementById('who-we-are') !== null) {
-
-            var whoWeAreSection = document.getElementById('who-we-are');
-            var whoWeAreImage = document.getElementsByClassName('who-we-are__info-container')[0];
-
-            if (whoWeAreSection.getBoundingClientRect().top < window.innerHeight) {
-                whoWeAreImage.classList.add('lazy');
-            }
-        }
-    }
-
-    window.addEventListener('scroll', lazyLoading);
-
     return (
         <div>
             <section className="featured-product" id="featured-product">
