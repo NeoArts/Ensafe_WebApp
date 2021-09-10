@@ -25,7 +25,7 @@ class Menu extends Component {
                             <li className={"menu__item " + this.props.modificator}>
                                 <Link to="/privacy-policy" className="menu__link">Política de privacidad</Link>
                             </li>
-                            <li className="menu__item">
+                            <li className={"menu__item " + this.props.modificator}>
                                 <Link to="/contact-us" className="menu__link">Contáctenos</Link>
                             </li>
                         </ul>

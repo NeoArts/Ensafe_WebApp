@@ -70,7 +70,6 @@ function NavBar() {
             }
         }
     }
-
     window.addEventListener('resize', setMenuState);
     window.addEventListener('load', setMenuState);
 

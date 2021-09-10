@@ -11997,6 +11997,7 @@ a {
 
 .outline-button:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
 }
 
 .main-button {
@@ -12243,6 +12244,7 @@ a {
   height: 3.125em;
   bottom: 2.5em;
   right: 6.25em;
+  z-index: 99;
 }
 
 .divider:hover {
@@ -12944,7 +12946,7 @@ a {
 
 .input {
   display: block;
-  width: 96%;
+  width: 100%;
   padding: 0.3125em 2%;
   font: 1em 'Gilroy', sans-serif;
   font-display: swap;
