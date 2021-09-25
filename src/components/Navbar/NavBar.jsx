@@ -1,7 +1,10 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import logoSVG from '../../images/logoSVG.svg'
+import logoCircleSVG from '../../images/LogoCircleEnsafe.png'
 import Menu from '../Menu'
+import ShoppingMenu from '../ShoppingMenu'
+import cookie from 'js-cookie'
 import {
     Link
 } from 'react-router-dom'
@@ -67,9 +70,11 @@ function NavBar() {
             menu.classList.remove('absolute-item');
             for (var j = 0; j < menuItems.length; j++) {
                 menuItems[j].style.marginRight = '0em';
+                menuItems[j].classList.remove('menu-vertical');
             }
         }
     }
+
     window.addEventListener('resize', setMenuState);
     window.addEventListener('load', setMenuState);
 
@@ -79,8 +84,12 @@ function NavBar() {
                 <div className="nav__container">
                     <Link to="/">
                         <img src={logoSVG} alt="Ensafe SAS logo" className="logo" />
+                        <img src={logoCircleSVG} alt="Ensafe SAS logo" className="logo-circle" />
                     </Link>
-                    <Menu className="menu-horizontal" />
+                    <div className="nav__menu">
+                        <Menu className="menu-horizontal" />
+                        <ShoppingMenu />
+                    </div>
                     <div className="menu-icon" id="menu-icon" onClick={() => changeMenuState()}>
                         <div className="menu-icon__bar top"></div>
                         <div className="menu-icon__bar middle"></div>

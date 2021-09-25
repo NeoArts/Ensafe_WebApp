@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import Homepage from './components/Homepage/Homepage'
 import ProductsPage from './components/ProductsPage/ProductsPage'
 import PqrsPage from './components/PqrsPage/PqrsPage'
@@ -6,6 +6,7 @@ import PrivacyPolicy from './components/PrivacyPolicyPage/PrivacyPolicyPage'
 import ContactUs from './components/ContactUsPage/ContactUs'
 import { Route, Switch } from 'react-router-dom'
 import SocialMediaFloatingBanner from './components/SocialMediaFloatingBanner'
+import cookie from 'js-cookie'
 
 function App() {
 
