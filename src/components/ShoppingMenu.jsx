@@ -22,8 +22,6 @@ function ShoppingMenu() {
     const verifyUser = () => {
         var stayLogged = cookie.get('stayLogged');
 
-        if (stayLogged === 'true') {
-
             var token = cookie.get('token');
             var refreshToken = cookie.get('refreshToken');
             userName = cookie.get('userName');
@@ -49,29 +47,42 @@ function ShoppingMenu() {
                         }).then(response => response.text())
                             .then(data => {
                                 var dataBody = JSON.parse(data);
-                                console.log(dataBody);
                                 if (dataBody.errorMessage === null) {
-                                    cookie.set("token", dataBody.accessToken);
-                                    cookie.set("refreshToken", dataBody.refreshToken);
-                                    console.log('Nuevo token establecido');
-
-                                    setUserSesion(true);
+                                    if(stayLogged === 'true'){
+                                        cookie.set("token", dataBody.accessToken);
+                                        cookie.set("refreshToken", dataBody.refreshToken);
+                                        console.log('Nuevo token establecido');
+    
+                                        setUserSesion(true);
+                                    }
+                                    else{
+                                        fetch('https://localhost:44305/api/User/logout', {
+                                            method: 'DELETE',
+                                            headers: {
+                                                Authorization: `Bearer ${dataBody.accessToken}`,
+                                                "Content-Type": "application/json"
+                                            }
+                                        }).then(() => {
+                                            cookie.remove('token');
+                                            cookie.remove('refreshToken');
+                                            cookie.remove('userName');
+                                            cookie.remove('userLastName');
+                                            cookie.remove('stayLogged');
+                                            console.log("Sesión expirada");
+                                        }) 
+                                    }
                                 }
                             })
                     }
                     else {
-
                         setUserSesion(true);
                     }
                 });
+                
             }
             catch (exception) {
-                console.log('error');
+                console.log('Lo sentimos, ha ocurrido un error');
             }
-        }
-        else {
-            console.log('no hay sesion');
-        }
     }
 
     useEffect(() => {
@@ -81,7 +92,7 @@ function ShoppingMenu() {
     return (
         <nav className="shopping-menu">
             <ul className="shopping-menu__nav">
-                <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="shopping-menu__item no-border">
+                <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="shopping-menu__item no-border d-flex">
                     <FaShoppingCart size='18px' />
                 </motion.button>
                 <motion.button

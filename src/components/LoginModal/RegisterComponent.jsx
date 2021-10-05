@@ -30,19 +30,30 @@ function registerCommand() {
                     .then(response => response.text())
                     .then(
                         data => {
-                            var error = JSON.parse(data).errorMessage;
+                            var dataBody = JSON.parse(data);
+                            var error = dataBody.errorMessage;
 
-                            if (error === undefined) {
-                                error = 'La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una minúscula y un número';
+                            if(error !== null){
+                                if (error === undefined) {
+                                    error = 'La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una minúscula y un número';
+                                }
+    
+                                errorResponse.innerHTML = error;
                             }
-
-                            errorResponse.innerHTML = error;
-
-                            console.log(JSON.parse(data));
+                            else{
+                                cookie.set("stayLogged", "false");
+                                cookie.set("token", dataBody.accessToken);
+                                cookie.set("refreshToken", dataBody.refreshToken);
+                                cookie.set("userName", dataBody.user.userName);
+                                cookie.set("userLastName", dataBody.user.userLastName);
+                                window.location.reload();
+                            }
                         }
-                    );
+                    ).catch(() => {
+                        console.log("Error de conexión con el servidor");
+                    })
             } catch (exception) {
-                alert('Sorry, something when wrong');
+                alert('Lo sentimos, algo salió mal');
             }
         }
 

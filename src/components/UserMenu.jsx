@@ -4,7 +4,6 @@ import cookie from 'js-cookie'
 function UserMenu() {
 
     const logOut = () => {
-        alert('so');
         try {
             var token = cookie.get('token');
             var refreshToken = cookie.get('refreshToken');
@@ -16,9 +15,7 @@ function UserMenu() {
                     "Content-Type": "application/json"
                 }
             }).then(response => {
-                console.log("response verify sesion: " + response.status);
                 if (response.status !== 200) {
-                    console.log("CAMBIANDO TOKEN");
                     var RefreshToken = refreshToken;
                     var refreshRequest = { RefreshToken };
                     fetch('https://localhost:44305/api/User/refresh', {
@@ -30,11 +27,9 @@ function UserMenu() {
                     }).then(response => response.text())
                         .then(data => {
                             var dataBody = JSON.parse(data);
-                            console.log(dataBody);
                             if (dataBody.errorMessage === null) {
                                 cookie.set("token", dataBody.accessToken);
                                 cookie.set("refreshToken", dataBody.refreshToken);
-                                console.log('Nuevo token establecido');
 
                                 token = cookie.get('token');
                                 refreshToken = cookie.get('refreshToken');
@@ -52,7 +47,7 @@ function UserMenu() {
                                         cookie.remove('userName');
                                         cookie.remove('userLastName');
                                         cookie.remove('stayLogged');
-                                        console.log('Has cerrado sesión');
+                                        window.location.reload();
                                     }
                                     else {
                                         console.log('algo ha salido mal');
@@ -70,17 +65,16 @@ function UserMenu() {
                             "Content-Type": "application/json"
                         }
                     }).then(response => {
-                        console.log("responset wet: " + response.status);
                         if (response.status === 200) {
                             cookie.remove('token');
                             cookie.remove('refreshToken');
                             cookie.remove('userName');
                             cookie.remove('userLastName');
                             cookie.remove('stayLogged');
-                            console.log('sesion cerrada');
+                            window.location.reload();
                         }
                         else {
-                            console.log('algo ha salido mal');
+                            console.log('lo sentimos, algo ha salido mal');
                             console.log(response.status);
                         }
                     })
@@ -88,7 +82,7 @@ function UserMenu() {
             });
         }
         catch (exception) {
-            console.log('error');
+            console.log('lo sentimos, algo ha salido mal');
         }
     }
 
@@ -102,7 +96,7 @@ function UserMenu() {
                     <a href="#" className="user-menu__link">Historial de compras</a>
                 </li>
                 <li className="user-menu__item">
-                    <a href="#" className="user-menu__link">Carritos</a>
+                    <a href="#" className="user-menu__link">Carrito</a>
                 </li>
                 <li className="user-menu__item">
                     <button className="user-menu__link" onClick={() => logOut()}>Cerrar sesion</button>

@@ -12158,6 +12158,10 @@ a {
 .shopping-menu__item {
   margin-left: 0.625em;
   color: #2A2E92;
+  background-color: #F6F7FB;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .shopping-menu__item:hover {
@@ -12209,6 +12213,7 @@ a {
   transition: 300ms;
   display: block;
   text-align: start;
+  background-color: #F6F7FB;
 }
 
 .menu__link {
@@ -12308,6 +12313,8 @@ a {
 
 .user-menu__link {
   color: #2A2E92;
+  border: none;
+  background-color: #F6F7FB;
 }
 
 /* -------------------------------------------------------------------------- */

@@ -194,6 +194,8 @@ a:hover {}
 .shopping-menu__item {
   margin-left: 0.625em;
   color: $darkblue-primary;
+  background-color: $primary-light;
+  align-items: center;
 }
 
 .shopping-menu__item:hover {
@@ -239,6 +241,7 @@ a:hover {}
   transition: 300ms;
   display: block;
   text-align: start;
+  background-color: $primary-light;
 }
 
 .menu__link {
@@ -327,6 +330,8 @@ a:hover {}
 
 .user-menu__link {
   color: $darkblue-primary;
+  border: none;
+  background-color: $primary-light;
 }
 
 /* -------------------------------------------------------------------------- */

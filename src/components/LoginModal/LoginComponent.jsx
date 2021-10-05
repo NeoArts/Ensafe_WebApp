@@ -24,21 +24,33 @@ function loginCommand() {
                 .then(data => {
                     var dataBody = JSON.parse(data);
 
-                    if (stayLogged.checked) {
-                        cookie.set("stayLogged", "true");
+                    if(dataBody.errorMessage !== 'null'){
+                        if (stayLogged.checked) {
+                            cookie.set("stayLogged", "true");
+                        }
+                        else {
+                            cookie.set("stayLogged", "false");
+                        }
+    
+                        if (dataBody.errorMessage !== 'null') {
+                            cookie.set("token", dataBody.accessToken);
+                            cookie.set("refreshToken", dataBody.refreshToken);
+                            cookie.set("userName", dataBody.user.userName);
+                            cookie.set("userLastName", dataBody.user.userLastName);
+                            window.location.reload();
+                        }
+                        else{
+                            console.log(dataBody.errorMessage);
+                        }
                     }
-                    else {
-                        cookie.set("stayLogged", "false");
+                    else{
+                        console.log(dataBody.errorMessage);
                     }
-
-                    if (dataBody.errorMessage === null) {
-                        cookie.set("token", dataBody.accessToken);
-                        cookie.set("refreshToken", dataBody.refreshToken);
-                        cookie.set("userName", dataBody.user.userName);
-                        cookie.set("userLastName", dataBody.user.userLastName);
-                    }
+                }).catch((error) => {
+                    console.log("Lo sentimos, ha ocurrido un error, verifica tu conexión a internet")
                 })
         } catch (exception) {
+            window.location.reload();
             alert('Sorry, something when wrong');
         }
 
