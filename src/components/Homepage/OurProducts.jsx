@@ -5,6 +5,8 @@ import helmet from '../../images/helmet.svg'
 import gloves from '../../images/gloves.svg'
 import boots from '../../images/boots.svg'
 import clip from '../../images/clip.svg'
+import { Link } from 'react-router-dom'
+import {AiOutlineArrowRight} from 'react-icons/ai'
 
 function OurProducts() {
     return (
@@ -36,6 +38,10 @@ function OurProducts() {
                         <p className="grid__title">Protección de manos</p>
                     </button>
                 </div>
+            </div>
+            <div className='our-products__see-more'>
+                <Link to="/products" className='our-products__see-more__link' >Ver productos</Link>
+                <AiOutlineArrowRight/>
             </div>
         </div>
     )
