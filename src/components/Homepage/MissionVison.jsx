@@ -1,7 +1,7 @@
 import React from 'react'
-import vision from '../../images/vision-dark.svg'
-import mission from '../../images/mission-dark.svg'
-import value from '../../images/values-dark.svg'
+import vision from '../../assets/images/vision-dark.svg'
+import mission from '../../assets/images/mission-dark.svg'
+import value from '../../assets/images/values-dark.svg'
 
 function MissionVison() {
     return (

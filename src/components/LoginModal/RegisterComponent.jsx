@@ -1,6 +1,5 @@
 import React from 'react'
-import logoEnsafe from '../../images/logoSVG.svg'
-import cookie from 'js-cookie'
+import logoEnsafe from '../../assets/images/logoSVG.svg'
 
 function RegisterComponent() {
     return (

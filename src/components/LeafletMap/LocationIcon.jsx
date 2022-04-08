@@ -1,5 +1,5 @@
 import L from 'leaflet'
-import placeholder from '../../images/placeholder.svg'
+import placeholder from '../../assets/images/placeholder.svg'
 
 const LocationIcon = L.icon({
     iconUrl: placeholder,

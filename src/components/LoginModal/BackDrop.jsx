@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Route, Switch } from 'react-router';
-import loginComponent from './LoginComponent'
-import { Link } from 'react-router-dom';
 import LoginComponent from './LoginComponent';
 import RegisterComponent from './RegisterComponent';
 

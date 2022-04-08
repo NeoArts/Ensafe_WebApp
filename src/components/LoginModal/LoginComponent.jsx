@@ -1,7 +1,5 @@
 import React from 'react'
-import logoEnsafe from '../../images/logoSVG.svg'
-import cookie from 'js-cookie'
-import { motion } from 'framer-motion'
+import logoEnsafe from '../../assets/images/logoSVG.svg'
 
 function LoginComponent() {
     return (

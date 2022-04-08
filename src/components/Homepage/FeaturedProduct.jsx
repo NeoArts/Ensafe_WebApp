@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
-import feet from '../../images/feets.webp'
-import head from '../../images/head.webp'
-import hands from '../../images/hands.webp'
-import Divider from '../Divider'
+import feet from '../../assets/images/feets.webp'
+import head from '../../assets/images/head.webp'
+import hands from '../../assets/images/hands.webp'
+import Divider from '../Shared/Divider'
 
 function FeaturedProduct() {
 
@@ -24,7 +24,7 @@ function FeaturedProduct() {
                         <div className="featured-product__info">
                             <div className="info">
                                 <h2 className="info-category">Protección para cabeza</h2>
-                                <Link to="/products" className="outline-button" >Ver productos</Link>
+                                <Link to="/products/PRC" params={{ category: "PRC" }} className="outline-button" >Ver productos</Link>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@ function FeaturedProduct() {
                         <div className="featured-product__info">
                             <div className="info">
                                 <h2 className="info-category">Protección para manos</h2>
-                                <Link to="/products" className="outline-button" >Ver productos</Link>
+                                <Link to="/products/PRM" params={{ category: "PRM" }} className="outline-button" >Ver productos</Link>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@ function FeaturedProduct() {
                         <div className="featured-product__info">
                             <div className="info">
                                 <h2 className="info-category">Protección para pies</h2>
-                                <Link to="/products" className="outline-button" >Ver productos</Link>
+                                <Link to="/products/PCR" params={{ category: "PCR" }} className="outline-button" >Ver productos</Link>
                             </div>
                         </div>
                     </div>
@@ -58,20 +58,6 @@ function FeaturedProduct() {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-            {/* <img src={slideImage[position]} alt="Ensafe SAS products" className="featured-product__image" />
-            <div className="featured-product__info">
-                <div className="info">
-                    <h2 className="info-category">Protección para manos</h2>
-                    <p className="info-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi reprehenderit eum eaque cum neque sunt?</p>
-                    <Link to="/products" className="outline-button" >Ver productos</Link>
-                </div>
-            </div>
-            <div className="featured-product__controls">
-                <FontAwesomeIcon icon={faChevronRight} className="featured-product__next" size='3x' onClick={nextSlideImage} />
-            </div>
-            <div className="featured-product__controls">
-                <FontAwesomeIcon icon={faChevronLeft} className="featured-product__prev" size='3x' onClick={prevSlideImage} />
-            </div> */}
             <Divider className="absolute-item" title="Nuestros productos" color="#FFFFFF" id="our-products-divider" />
         </div>
     )
