@@ -13,7 +13,7 @@ class ProductDetailsPage extends Component {
         const colors = [];
 
         for (const [color, imageUrl] of Object.entries(productColors)) {
-            colors.push(<button id={"btn-" + color} style={{marginRight: "10px"}} className='outline-button-blue' onClick={() => changeColorImage(imageUrl, "btn-" + color)}>{color}</button>);
+            colors.push(<button key={"btn-" + color} id={"btn-" + color} style={{marginRight: "10px"}} className='outline-button-blue' onClick={() => changeColorImage(imageUrl, "btn-" + color)}>{color}</button>);
         }
 
         if(Object.values(productColors).length > 0){
@@ -36,6 +36,13 @@ class ProductDetailsPage extends Component {
         function SelectFirstColorButton(){
             useEffect(() => {
                 document.getElementsByClassName('outline-button-blue')[0].classList.add("active");
+
+                var categoryHeader = document.getElementById('categoryHeader');
+
+                if(categoryHeader !== null){
+                    categoryHeader.classList.add('hide');
+                }
+
                 window.scrollTo(0, 0);
             },[]);
 

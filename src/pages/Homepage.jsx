@@ -1,6 +1,8 @@
 import 'leaflet/dist/leaflet.css'
 import Divider from '../components/Shared/Divider'
 import React, { useEffect, Suspense } from 'react'
+import FeaturedProduct from '../components/Homepage/FeaturedProduct';
+import OurProducts from '../components/Homepage/OurProducts';
 
 function Homepage() {
 
@@ -9,12 +11,16 @@ function Homepage() {
         var menu = document.getElementById('menu');
 
         if(menu !== null){
-            menu.style.top = "5.1688em"
+            menu.style.top = "4.4725em"
+        }
+
+        var categoryHeader = document.getElementById('categoryHeader');
+
+        if(categoryHeader !== null){
+            categoryHeader.classList.add('hide');
         }
     }, []);
-
-    const LazyFeaturedProduct = React.lazy(() => import('../components/Homepage/FeaturedProduct'));
-    const LazyOurProducts = React.lazy(() => import('../components/Homepage/OurProducts'));
+    
     const LazyWhoWeAre = React.lazy(() => import('../components/Homepage/WhoWeAreSection'));
     const LazyMissionVision = React.lazy(() => import('../components/Homepage/MissionVison'));
     const LazyCompany = React.lazy(() => import('../components/Homepage/Company'));
@@ -22,14 +28,10 @@ function Homepage() {
     return (
         <div>
             <section className="featured-product" id="featured-product">
-                <Suspense fallback={<div>Loading...</div>}>
-                    <LazyFeaturedProduct />
-                </Suspense>
+                <FeaturedProduct/>
             </section>
             <section className="our-products" id="our-products">
-                <Suspense fallback={<div>Loading...</div>}>
-                    <LazyOurProducts />
-                </Suspense>
+                <OurProducts/>
                 <Divider title="¿Quienes somos?" className="relative-item" color="#2A2E92" background="#fff" id="who-we-are-divider" />
             </section>
             <section className="who-we-are" id="who-we-are">

@@ -11,7 +11,6 @@ class Menu extends Component {
 
         function closeMenu(){
             var menu = document.getElementById('menu-icon');
-            var menuState = document.getElementById('menu');
 
             if(menu !== null && window.innerWidth <= 1108 && !menu.classList.contains("open")){
                 menu.click();

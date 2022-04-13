@@ -1,117 +1,126 @@
-import React, { useState, useEffect, Component } from 'react'
-import { motion } from 'framer-motion'
-import database from '../database/ProductsLocalDatabase.json'
-import ProductsGridComponent from '../components/ProductsPage/ProductsGridComponent';
+import React, { useEffect } from 'react'
 import ProductItem from '../components/ProductsPage/ProductItem';
+import GradientTitle from '../components/Shared/GradientTitle';
+import database from '../database/ProductsLocalDatabase.json'
 
-class Productspage extends Component {
+function Productspage() {
+    var category = window.location.href.split("/").pop();
+    var products = database.productsDatabase;
+    const productElements = [];
+    const productInDiscount = [];
 
-    render(){
-
-        var category = window.location.href.split("/").pop();
-        var products = database.productsDatabase;
-        var menu = document.getElementById('menu');
-        const productElements = [];
-        console.log(category);
-        if(menu !== null){
-            menu.style.top = "calc(5.1688em + 50px)";
-        }
-        
-        window.scrollTo(0, 0);
-
-        for(var i = 0; i < products.length; i++){
-            if(products[i].productCategoryId === category){
-                productElements.push(<ProductItem id={products[i].productId} price={products[i].productPrice} name={products[i].productName} category={products[i].productCategoryId}
-                                                description={products[i].productDescription} colors={products[i].procuctColors} image={Object.values(products[i].procuctColors)[0]}
-                                                discount={products[i].productDiscount} amount={products[i].productAmount}/>);
+    for(var i = 0; i < products.length; i++){
+        if(products[i].productCategoryId === category){
+            if(products[i].productDiscount > 0  && products[i].productCategoryId === database.monthSection){
+                productInDiscount.push(<ProductItem key={products[i].productId} id={products[i].productId} price={products[i].productPrice} name={products[i].productName} category={products[i].productCategoryId}
+                    description={products[i].productDescription} colors={products[i].procuctColors} image={Object.values(products[i].procuctColors)[0]}
+                    discount={products[i].productDiscount} amount={products[i].productAmount}/>);
             }
+            productElements.push(<ProductItem key={products[i].productId} id={products[i].productId} price={products[i].productPrice} name={products[i].productName} category={products[i].productCategoryId}
+                                            description={products[i].productDescription} colors={products[i].procuctColors} image={Object.values(products[i].procuctColors)[0]}
+                                            discount={products[i].productDiscount} amount={products[i].productAmount}/>);
         }
+    }
 
-        function setCategory(category){
-            switch(category){
-                case "PRV":
-                    window.location.href = "http://" + window.location.host + "/#/products/PRV";
-                    break;
-                case "PRC":
-                    window.location.href = "http://" + window.location.host + "/#/products/PRC";
-                    break;
-                case "PRF":
-                    window.location.href = "http://" + window.location.host + "/#/products/PRF";
-                    break;
-                case "PRA":
-                    window.location.href = "http://" + window.location.host + "/#/products/PRA";
-                    break;
-                case "PRM":
-                    window.location.href = "http://" + window.location.host + "/#/products/PRM";
-                    break;
-                case "PCR":
-                    window.location.href = "http://" + window.location.host + "/#/products/PCR";
-                    break;
-                case "PAC":
-                    window.location.href = "http://" + window.location.host + "/#/products/PAC";
-                    break;
-                default:
-                    window.location.href = "http://" + window.location.host + "/#/products/PRV";
-            }
-        }
+    var titlePromotion = "";
 
-        //setCategory(category);
+    switch(database.monthSection){
+        case "PRV":
+            titlePromotion = "visual";
+            break;
+        case "PRC":
+            titlePromotion = "de cabeza";
+            break;
+        case "PRF":
+            titlePromotion = "facial";
+            break;
+        case "PRA":
+            titlePromotion = "auditiva";
+            break;
+        case "PRM":
+            titlePromotion = "manual";
+            break;
+        case "PCR":
+            titlePromotion = "corporal";
+            break;
+        case "PAC":
+            titlePromotion = "anti-caída";
+            break;
+        default:
+            titlePromotion = "visual";
+            break;
+    }
+
+    var menuLinkElements = document.getElementsByClassName('category-menu__link-border');
     
-        return (
-            <>
-            <section className='products'>
-                    <div className="products__container">
-                        <div className="category-header">
-                            <div className="category-header__container">
-                                <div className="category-menu">
-                                    <nav className="category-menu__container">
-                                        <ul className='menu-horizontal category-menu__ul'>
-                                            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={"menu__item no-border category-menu__item"} onClick={() => setCategory("PRV")}>
-                                                <div className="category-menu__link" replace>Protección visual</div>
-                                                <div className={category === "PRV" ? "category-menu__link-border active" : "category-menu__link-border"}></div>
-                                            </motion.button>
-                                            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={"menu__item no-border category-menu__item"} onClick={() => setCategory("PRC")}>
-                                                <div className="category-menu__link" replace>Protección cabeza</div>
-                                                <div className={category === "PRC" ? "category-menu__link-border active" : "category-menu__link-border"}></div>
-                                            </motion.button>
-                                            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={"menu__item no-border category-menu__item"} onClick={() => setCategory("PRF")}>
-                                                <div className="category-menu__link" replace>Protección facial</div>
-                                                <div className={category === "PRF" ? "category-menu__link-border active" : "category-menu__link-border"}></div>
-                                            </motion.button>
-                                            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={"menu__item no-border category-menu__item"} onClick={() => setCategory("PRA")}>
-                                                <div className="category-menu__link" replace>Protección auditiva</div>
-                                                <div className={category === "PRA" ? "category-menu__link-border active" : "category-menu__link-border"}></div>
-                                            </motion.button>
-                                            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={"menu__item no-border category-menu__item"} onClick={() => setCategory("PRM")}>
-                                                <div className="category-menu__link" replace>Protección manual</div>
-                                                <div className={category === "PRM" ? "category-menu__link-border active" : "category-menu__link-border"}></div>
-                                            </motion.button>
-                                            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={"menu__item no-border category-menu__item"} onClick={() => setCategory("PCR")}>
-                                                <div className="category-menu__link" replace>Protección corporal</div>
-                                                <div className={category === "PCR" ? "category-menu__link-border active" : "category-menu__link-border"}></div>
-                                            </motion.button>
-                                            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={"menu__item no-border category-menu__item"} onClick={() => setCategory("PAC")}>
-                                                <div className="category-menu__link" replace>Protección anti-caída</div>
-                                                <div className={category === "PAC" ? "category-menu__link-border active" : "category-menu__link-border"}></div>
-                                            </motion.button>
-                                        </ul>
-                                    </nav>
+    if(menuLinkElements.length > 0){
+        for(var j = 0; j < menuLinkElements.length; j++){
+            menuLinkElements[j].classList.remove('active');
+        }
+    
+        switch(category){
+            case "PRV":
+                menuLinkElements[0].classList.add('active')
+                break;
+            case "PRC":
+                menuLinkElements[1].classList.add('active')
+                break;
+            case "PRF":
+                menuLinkElements[2].classList.add('active')
+                break;
+            case "PRA":
+                menuLinkElements[3].classList.add('active')
+                break;
+            case "PRM":
+                menuLinkElements[4].classList.add('active')
+                break;
+            case "PCR":
+                menuLinkElements[5].classList.add('active')
+                break;
+            case "PAC":
+                menuLinkElements[6].classList.add('active')
+                break;
+            default:
+                menuLinkElements[0].classList.add('active')
+                break;
+        }
+    }
+    
+    window.scrollTo(0, 0);
+
+    useEffect(() => {
+        var categoryHeader = document.getElementById('categoryHeader');
+
+        if(categoryHeader !== null){
+            categoryHeader.classList.remove('hide');
+        }
+    });
+
+    return (
+        <>
+        <section className='products' id='productsSection'>
+                <div className={"products__container"}>
+                    <div>
+                        {(productInDiscount.length > 0) &&
+                        <div>
+                            <div className={"products-grid promotion-grid"} id='productGrid'>
+                                <div className={(productInDiscount.length > 0) ? "products-grid__container filled" : "products-grid__container"} id="productsGridContainer">
+                                    <GradientTitle title={"Mes de la protección " + titlePromotion}/>
+                                    {productInDiscount}
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <div className="products-grid" id='productGrid'>
-                                <div className="products-grid__container" id="productsGridContainer">
-                                    {productElements}
-                                </div>
+                        </div>}
+                        <div className="products-grid" id='productGrid'>
+                            <div className="products-grid__container" id="productsGridContainer">
+                                {productElements}
                             </div>
                         </div>
                     </div>
-            </section>
-                
-            </>
-        )
-    }
+                </div>
+        </section>
+            
+        </>
+    )
 }
 
 export default Productspage

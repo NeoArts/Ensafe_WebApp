@@ -9,7 +9,7 @@ function ProductItem(props) {
 
     const colors = [];
     
-    for (const [color, url] of Object.entries(props.colors)) {
+    for (const color of Object.keys(props.colors)) {
         colors.push(<li key={color}>{color}</li>);
     }
     

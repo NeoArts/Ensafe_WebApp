@@ -5,15 +5,20 @@ function PrivacyPolicyPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
         var menu = document.getElementById('menu');
+        var categoryHeader = document.getElementById('categoryHeader');
+
+        if(categoryHeader !== null){
+            categoryHeader.classList.add('hide');
+        }
 
         if(menu !== null){
-            menu.style.top = "5.1688em"
+            menu.style.top = "4.4725em"
         }
     }, []);
 
     return (
         <div>
-            <section className="privacy-policy">
+            <section className="privacy-policy" id='privacyPolicySection'>
                 <div className="privacy-policy__container">
                     <h2 className="privacy-policy__title">POLÍTICA DE PRIVACIDAD</h2>
                     <p className="privacy-policy__info">La presente Política de Privacidad establece los términos en que ENSAFE SAS usa y protege la información que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado, lo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento. Sin embargo esta Política de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le recomendamos y enfatizamos revisar continuamente esta página para asegurarse que está de acuerdo con dichos cambios.</p>

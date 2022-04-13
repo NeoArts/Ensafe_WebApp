@@ -17,30 +17,30 @@ function OurProducts() {
             </div>
             <div className="grid">
                 <div className="grid__container">
-                    <button className="grid__item transparent-background">
+                    <Link to="/products/PRC" className="grid__item transparent-background">
                         <img src={helmet} alt="" className="grid__image" />
                         <p className="grid__title">Protección de cabeza</p>
-                    </button>
-                    <button className="grid__item transparent-background">
+                    </Link>
+                    <Link to="/products/PCR" className="grid__item transparent-background">
                         <img src={boots} alt="" className="grid__image" />
                         <p className="grid__title">Protección de pies</p>
-                    </button>
-                    <button className="grid__item transparent-background">
+                    </Link>
+                    <Link to="/products/PAC" className="grid__item transparent-background">
                         <img src={clip} alt="" className="grid__image" />
                         <p className="grid__title">Protección anticaída</p>
-                    </button>
-                    <button className="grid__item transparent-background">
+                    </Link>
+                    <Link to="/products/PCR" className="grid__item transparent-background">
                         <img src={lifeJacket} alt="" className="grid__image" />
                         <p className="grid__title">Protección de cuerpo</p>
-                    </button>
-                    <button className="grid__item transparent-background">
+                    </Link>
+                    <Link to="/products/PRM" className="grid__item transparent-background">
                         <img src={gloves} alt="" className="grid__image" />
                         <p className="grid__title">Protección de manos</p>
-                    </button>
+                    </Link>
                 </div>
             </div>
             <div className='our-products__see-more'>
-                <Link to="/products" className='our-products__see-more__link' >Ver productos</Link>
+                <Link to="/products/PRV" className='our-products__see-more__link' >Ver productos</Link>
                 <AiOutlineArrowRight/>
             </div>
         </div>
