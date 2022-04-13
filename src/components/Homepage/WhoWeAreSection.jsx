@@ -2,7 +2,7 @@ import { faPhone, faQuestion, faInfo } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Divider from '../Divider'
+import Divider from '../Shared/Divider'
 
 function WhoWeAreSection() {
     return (

@@ -6,7 +6,7 @@ function Company() {
         <div>
             <div className="company__container">
                 <div className="company__map">
-                    <a href="https://www.google.com/maps/dir/4.7374575,-74.1122502/ensafe/@4.6809944,-74.1636275,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x8e3f9955d6541857:0x44402855ae467a5e!2m2!1d-74.1182454!2d4.6257052" target="_blank" rel="noreferrer" className="company__map-googlemaps">Ver en google maps</a>
+                    <a href="https://www.google.com/maps/place/ENSAFE+SAS/@4.6257401,-74.1204962,17z/data=!3m1!4b1!4m5!3m4!1s0x8e3f9955d6541857:0x44402855ae467a5e!8m2!3d4.6257401!4d-74.1183075" target="_blank" rel="noreferrer" className="company__map-googlemaps">Ver en google maps</a>
                     <MapView />
                 </div>
                 <div className="company__info">
