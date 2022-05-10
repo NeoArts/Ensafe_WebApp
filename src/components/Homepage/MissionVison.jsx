@@ -6,7 +6,7 @@ import value from '../../assets/images/values-dark.svg'
 function MissionVison() {
     return (
         <div className="mission-vision__container">
-            <div className="mission-vision__grid-container max-p-width">
+            <div className="mission-vision__grid-container">
                 <div className="mission-vision__info">
                     <img src={mission} alt="" className="mission-vision__info-image" />
                     <p className="mission-vision__info-description">Suministramos dotación industrial y productos de protección personal, encaminados a garantizar la salud y seguridad de las personas y la protección del entorno en toda clase de empresas y organizaciones. Enmarcados en nuestros valores y buscando el beneficio de nuestros socios y colaboradores</p>

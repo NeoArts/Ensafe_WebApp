@@ -99,7 +99,7 @@ function Productspage() {
     return (
         <>
         <section className='products' id='productsSection'>
-                <div className={"products__container max-p-width"}>
+                <div className={"products__container"}>
                     <div>
                         {(productInDiscount.length > 0) &&
                         <div>
