@@ -47,7 +47,7 @@ class Divider extends Component {
 
     render() {
         return (
-            <div>
+            <div className='max-p-width-nm'>
                 <div className={"divider " + this.props.className} id={this.props.id} style={{ color: this.props.color }} onClick={() => scrollWindow(this.props.id)}>
                     <div className="divider__container">
                         <h2 className="divider__title">{this.props.title}</h2>

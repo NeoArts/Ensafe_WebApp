@@ -10,7 +10,7 @@ import {AiOutlineArrowRight} from 'react-icons/ai'
 
 function OurProducts() {
     return (
-        <div className="our-products__container">
+        <div className="our-products__container max-p-width">
             <div className="our-products__info">
                 <GradientTitle title="Protección en cualquier lugar" />
                 <p className="our-products__description">Todos nuestros productos con la mejor calidad</p>

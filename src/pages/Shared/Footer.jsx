@@ -11,7 +11,7 @@ function Footer() {
     return (
         <div>
             <footer className="footer">
-                <div className="footer__container">
+                <div className="footer__container max-p-width">
                     <div className="footer__content">
                         <div className="footer__identity">
                             <img src={logoSVG} alt="" className="footer__image" />
