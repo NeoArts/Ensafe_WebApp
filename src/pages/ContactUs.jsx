@@ -37,7 +37,7 @@ function ContactUs() {
         }
         else{
             document.getElementById('formError').style.display = "none";
-            window.open("https://mail.google.com/mail/?view=cm&fs=1&to=ensafesas@gmail.com&su=" + subject + ": " + name + "&body=" + message + "%0A%0AAtt: " + name + ".%0AEmail: " + email + ".%0ACelular: " + phone + ".");
+            window.open("https://mail.google.com/mail/?view=cm&fs=1&to=ventas@ensafecolombia.com&su=" + subject + ": " + name + "&body=" + message + "%0A%0AAtt: " + name + ".%0AEmail: " + email + ".%0ACelular: " + phone + ".");
         }
     }
 

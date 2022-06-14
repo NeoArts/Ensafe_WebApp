@@ -26,7 +26,7 @@ class Menu extends Component {
                                 <Link to="/" className="menu__link" onClick={closeMenu}>Inicio</Link>
                             </motion.button>
                             <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={"menu__item no-border " + this.props.modificator}>
-                                <Link to="/products/PRV" className="menu__link" onClick={closeMenu}>Productos</Link>
+                                <Link to="/products/PRV" className="menu__link" onClick={closeMenu}>Portafolio general</Link>
                             </motion.button>
 
                             <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={"menu__item no-border " + this.props.modificator}>
