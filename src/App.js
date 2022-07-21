@@ -4,7 +4,7 @@ import ProductsPage from './pages/ProductsPage'
 import PqrsPage from './pages/PqrsPage'
 import PrivacyPolicy from './pages/PrivacyPolicyPage'
 import ContactUs from './pages/ContactUs'
-import { Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Router, Switch } from 'react-router-dom'
 import SocialMediaFloatingBanner from './components/Shared/SocialMediaFloatingBanner'
 import ProductDetailsPage from './components/ProductsPage/ProductDetailsPage';
 import Productspage from './pages/ProductsPage'
@@ -64,35 +64,35 @@ function App() {
     switch(selectedCategory){
       case "PRV":
         menuLinkElements[0].classList.add('active')
-        window.location.href = "http://" + window.location.host + "/#/products/PRV";
+        window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRV";
         break;
       case "PRC":
         menuLinkElements[1].classList.add('active')
-        window.location.href = "http://" + window.location.host + "/#/products/PRC";
+        window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRC";
         break;
       case "PRF":
         menuLinkElements[2].classList.add('active')
-        window.location.href = "http://" + window.location.host + "/#/products/PRF";
+        window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRF";
         break;
       case "PRA":
         menuLinkElements[3].classList.add('active')
-        window.location.href = "http://" + window.location.host + "/#/products/PRA";
+        window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRA";
         break;
       case "PRM":
         menuLinkElements[4].classList.add('active')
-        window.location.href = "http://" + window.location.host + "/#/products/PRM";
+        window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRM";
         break;
       case "PCR":
         menuLinkElements[5].classList.add('active')
-        window.location.href = "http://" + window.location.host + "/#/products/PCR";
+        window.location.href = window.location.protocol + "//" + window.location.host + "/products/PCR";
         break;
       case "PAC":
         menuLinkElements[6].classList.add('active')
-        window.location.href = "http://" + window.location.host + "/#/products/PAC";
+        window.location.href = window.location.protocol + "//" + window.location.host + "/products/PAC";
         break;
       default:
         menuLinkElements[0].classList.add('active')
-        window.location.href = "http://" + window.location.host + "/#/products/PRV";
+        window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRV";
     }
   }
 
@@ -109,18 +109,18 @@ function App() {
       </div>
       <NavBar/>
       <SocialMediaFloatingBanner />
-      <Switch>
-        <Route exact path="/">
-          <Redirect to="/home" /> 
-        </Route>
-        <Route name="home" exact path="/home" component={Homepage} />
-        <Route exact path="/products" component={ProductsPage} />
-        <Route exact path="/pqrs" component={PqrsPage} />
-        <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-        <Route exact path="/contact-us" component={ContactUs} />
-        <Route name="single-product" exact path="/products/:category" component={Productspage}/>
-        <Route name="single-product" exact path="/products/:category/:id" component={ProductDetailsPage}/>
-      </Switch>
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/home" /> 
+          </Route>
+          <Route name="home" exact path="/home" component={Homepage} />
+          <Route exact path="/products" component={ProductsPage} />
+          <Route exact path="/pqrs" component={PqrsPage} />
+          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+          <Route exact path="/contact-us" component={ContactUs} />
+          <Route name="single-product" exact path="/products/:category" component={Productspage}/>
+          <Route name="single-product" exact path="/products/:category/:id" component={ProductDetailsPage}/>
+        </Switch>
       <Suspense fallback={<div>Loading...</div>}>
         <LazyFooter />
       </Suspense>
