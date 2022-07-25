@@ -58,7 +58,7 @@ function FeaturedProduct() {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-            <Divider className="absolute-item" title="Nuestros productos" color="#FFFFFF" id="our-products-divider" />
+            {/* <Divider className="absolute-item" title="Nuestros productos" color="#FFFFFF" id="our-products-divider" /> */}
         </div>
     )
 }

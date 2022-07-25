@@ -8,9 +8,16 @@ import ProductStock from './ProductStock';
 function ProductItem(props) {
 
     const colors = [];
+    const tallas = [];
     
     for (const color of Object.keys(props.colors)) {
         colors.push(<li key={color}>{color}</li>);
+    }
+
+    if(props.tallas !== undefined) {
+        for (const talla of props.tallas) {
+            tallas.push(<li key={talla}>{talla}</li>);
+        }
     }
     
     return (
@@ -38,6 +45,10 @@ function ProductItem(props) {
                 <p style={{margin: 0}}>Colores</p>
                 <ul>
                     {colors}
+                </ul>
+                {(props.tallas !== undefined) && <p style={{margin: 0}}>Talla</p>}
+                <ul>
+                    {tallas}
                 </ul>
                 {(props.amount > 0) && <BuyProductButton className={"product-info__buy-button"} name={props.name} id={props.id} category={props.category}/>}
             </div>

@@ -17,11 +17,11 @@ function Productspage() {
         if(products[i].productCategoryId.includes(category)){
             if(products[i].productDiscount > 0  && products[i].productCategoryId === database.monthSection){
                 productInDiscount.push(<ProductItem key={products[i].productId} id={products[i].productId} price={products[i].productPrice} name={products[i].productName} category={products[i].productCategoryId}
-                    description={products[i].productDescription} colors={products[i].procuctColors} image={Object.values(products[i].procuctColors)[0]}
+                    description={products[i].productDescription} colors={products[i].procuctColors} tallas={products[i].productSize} image={Object.values(products[i].procuctColors)[0]}
                     discount={products[i].productDiscount} amount={products[i].productAmount}/>);
             }
             productElements.push(<ProductItem key={products[i].productId} id={products[i].productId} price={products[i].productPrice} name={products[i].productName} category={products[i].productCategoryId}
-                                            description={products[i].productDescription} colors={products[i].procuctColors} image={Object.values(products[i].procuctColors)[0]}
+                                            description={products[i].productDescription} colors={products[i].procuctColors} tallas={products[i].productSize} image={Object.values(products[i].procuctColors)[0]}
                                             discount={products[i].productDiscount} amount={products[i].productAmount}/>);
         }
     }

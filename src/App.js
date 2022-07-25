@@ -21,7 +21,7 @@ function App() {
 
   let dateToday = new Date();
   let lastDayOfMonth = new Date(dateToday.getFullYear(), dateToday.getMonth()+1, 0).getDate();
-  let daysUntilEndOfMonth = lastDayOfMonth - dateToday.getDate();
+  let daysUntilEndOfMonth = (lastDayOfMonth + 15) - dateToday.getDate();
 
   function setCategory(selectedCategory){
 
