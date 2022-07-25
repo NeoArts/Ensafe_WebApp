@@ -25,6 +25,7 @@ function ContactUs() {
     function sendEmail(){
         var formEl = document.forms.contactUsForm;
         var formData = new FormData(formEl);
+        var checkBox = document.getElementById('checkMails');
 
         var name = formData.get('name');
         var email = formData.get('email');
@@ -32,6 +33,9 @@ function ContactUs() {
         var subject = formData.get('subject');
         var message = formData.get('message');
 
+        if(checkBox.checked)
+            message = message + "%0AManifiesto que autorizo el envío de E-mails por parte de Ensafe SAS a mi de buzón correos electrónicos"
+    
         if(hasWhiteSpace(name) || hasWhiteSpace(email) || hasWhiteSpace(phone) || hasWhiteSpace(subject) || hasWhiteSpace(message)){
             document.getElementById('formError').style.display = "block";
         }
@@ -70,6 +74,8 @@ function ContactUs() {
                         <input name="subject" type="text" id="subject" className="input menu-vertical" />
                         <label htmlFor="message">Mensage</label><br />
                         <textarea name="message" className="input" id="message" cols="30" rows="10">Hola equipo Ensafe, </textarea><br />
+                        <input name="checkMails" type="checkbox" style={{marginRight: "3px"}} id="checkMails"/>
+                        <label htmlFor="checkMails">Autorizo el envío de E-mails por parte de Ensafe SAS a mi buzón de correos electrónicos</label><br /><br />
                     </form>
                     <button className="main-button full-width" onClick={sendEmail}>Enviar</button>
                     <div id='formError' style={{textAlign: "center", marginTop: "0.3125em", color: "red", fontWeight: "bold", display: "none"}}>Por favor llena todos los campos con los valores correctos</div>

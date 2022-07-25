@@ -3,10 +3,8 @@ import { useState } from 'react'
 import logoSVG from '../../assets/images/logoSVG.svg'
 import logoCircleSVG from '../../assets/images/LogoCircleEnsafe.png'
 import Menu from '../../components/Shared/Menu'
-import ShoppingMenu from '../../components/Shared/ShoppingMenu'
 import database from '../../database/ProductsLocalDatabase.json'
 import ProductItem from '../../components/ProductsPage/ProductItem';
-import { motion } from 'framer-motion'
 import {
     Link
 } from 'react-router-dom'
@@ -83,7 +81,7 @@ function NavBar() {
 
     var products = database.productsDatabase;
     var category = window.location.href.split("/").pop();
-    console.log(category);
+    
     var productsSection = document.getElementById('productsSection');
     var menu = document.getElementById('menu');
 
@@ -107,78 +105,38 @@ function NavBar() {
         }
     }
 
-    function setCategory(selectedCategory){
-
-        var menuLinkElements = document.getElementsByClassName('category-menu__link-border');
-        
-        for(var i = 0; i < menuLinkElements.length; i++){
-            menuLinkElements[i].classList.remove('active');
-        }
-
-        switch(selectedCategory){
-            case "PRV":
-                menuLinkElements[0].classList.add('active')
-                window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRV";
-                break;
-            case "PRC":
-                menuLinkElements[1].classList.add('active')
-                window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRC";
-                break;
-            case "PRF":
-                menuLinkElements[2].classList.add('active')
-                window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRF";
-                break;
-            case "PRA":
-                menuLinkElements[3].classList.add('active')
-                window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRA";
-                break;
-            case "PRM":
-                menuLinkElements[4].classList.add('active')
-                window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRM";
-                break;
-            case "PCR":
-                menuLinkElements[5].classList.add('active')
-                window.location.href = window.location.protocol + "//" + window.location.host + "/products/PCR";
-                break;
-            case "PAC":
-                menuLinkElements[6].classList.add('active')
-                window.location.href = window.location.protocol + "//" + window.location.host + "/products/PAC";
-                break;
-            default:
-                menuLinkElements[0].classList.add('active')
-                window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRV";
-        }
-    }
-
     function setSelectedCategory(selectedCategory){
-
-        var menuLinkElements = document.getElementsByClassName('category-menu__link-border');
-        
+        console.log("select categort")
+        var menuLinkElements = document.getElementsByClassName('category-menu__link');
+        console.log(menuLinkElements);
         for(var i = 0; i < menuLinkElements.length; i++){
             menuLinkElements[i].classList.remove('active');
         }
-
+        console.log(selectedCategory);
         switch(selectedCategory){
-            case "PRV":
+            case "PDM":
                 menuLinkElements[0].classList.add('active')
                 break;
-            case "PRC":
+            case "PRV":
                 menuLinkElements[1].classList.add('active')
                 break;
-            case "PRF":
+            case "PRC":
                 menuLinkElements[2].classList.add('active')
                 break;
-            case "PRA":
+            case "PRF":
                 menuLinkElements[3].classList.add('active')
                 break;
-            case "PRM":
+            case "PRA":
                 menuLinkElements[4].classList.add('active')
                 break;
-            case "PCR":
+            case "PRM":
                 menuLinkElements[5].classList.add('active')
                 break;
-            case "PAC":
+            case "PCR":
                 menuLinkElements[6].classList.add('active')
+                break;
+            case "PAC":
+                menuLinkElements[7].classList.add('active')
                 break;
             default:
                 menuLinkElements[0].classList.add('active')
@@ -196,7 +154,7 @@ function NavBar() {
             }
         }
 
-        if(category === "PRV" || category === "PRC" || category === "PRF" || category === "PRA" || category === "PRM" || category === "PCR" || category === "PAC"){
+        if(category === "PDM" || category === "PRV" || category === "PRC" || category === "PRF" || category === "PRA" || category === "PRM" || category === "PCR" || category === "PAC"){
             console.log("set category: " + category);
             setSelectedCategory(category);
         }
@@ -215,50 +173,11 @@ function NavBar() {
                     </Link>
                     <div className="nav__menu">
                         <Menu className="menu-horizontal" />
-                        {/* <ShoppingMenu /> */}
                     </div>
                     <div className="menu-icon" id="menu-icon" onClick={() => changeMenuState()}>
                         <div className="menu-icon__bar top"></div>
                         <div className="menu-icon__bar middle"></div>
                         <div className="menu-icon__bar bottom"></div>
-                    </div>
-                </div>
-                <div id='categoryHeader' className={"category-header hide"}>
-                    <div className="category-header__container">
-                        <div className="category-menu">
-                            <nav className="category-menu__container">
-                                <ul className='menu-horizontal category-menu__ul'>
-                                    <Link to="/products/PRV" params={{ category: "PRV" }} className={"menu__item no-border category-menu__item"} >
-                                        <div className="category-menu__link">Protección visual</div>
-                                        <div className="category-menu__link-border active"></div>
-                                    </Link>
-                                    <Link to="/products/PRC" params={{ category: "PRC" }} className={"menu__item no-border category-menu__item"} >
-                                        <div className="category-menu__link">Protección cabeza</div>
-                                        <div className="category-menu__link-border"></div>
-                                    </Link>
-                                    <Link to="/products/PRF" params={{ category: "PRF" }} className={"menu__item no-border category-menu__item"} >
-                                        <div className="category-menu__link">Protección facial</div>
-                                        <div className="category-menu__link-border"></div>
-                                    </Link>
-                                    <Link to="/products/PRA" params={{ category: "PRA" }} className={"menu__item no-border category-menu__item"} >
-                                        <div className="category-menu__link">Protección auditiva</div>
-                                        <div className="category-menu__link-border"></div>
-                                    </Link>
-                                    <Link to="/products/PRM" params={{ category: "PRM" }} className={"menu__item no-border category-menu__item"} >
-                                        <div className="category-menu__link">Protección manual</div>
-                                        <div className="category-menu__link-border"></div>
-                                    </Link>
-                                    <Link to="/products/PCR" params={{ category: "PCR" }} className={"menu__item no-border category-menu__item"} >
-                                        <div className="category-menu__link">Protección corporal</div>
-                                        <div className="category-menu__link-border"></div>
-                                    </Link>
-                                    <Link to="/products/PAC" params={{ category: "PAC" }} className={"menu__item no-border category-menu__item"} >
-                                        <div className="category-menu__link">Protección anti-caída</div>
-                                        <div className="category-menu__link-border"></div>
-                                    </Link>
-                                </ul>
-                            </nav>
-                        </div>
                     </div>
                 </div>
             </div>

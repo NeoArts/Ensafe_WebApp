@@ -35,12 +35,11 @@ function ProductItem(props) {
                 </h2>
                 <p className="product-info__description">{props.description.length >= 166 ? props.description.substring(0, 163) + "..." : props.description}</p>
                 <br />
-                <strong>Colores:</strong>
+                <p style={{margin: 0}}>Colores</p>
                 <ul>
                     {colors}
                 </ul>
                 {(props.amount > 0) && <BuyProductButton className={"product-info__buy-button"} name={props.name} id={props.id} category={props.category}/>}
-                <ProductStock amount={props.amount}/>
             </div>
         </div>
     )

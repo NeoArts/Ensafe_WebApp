@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
 import feet from '../../assets/images/feets.webp'
-import head from '../../assets/images/head.webp'
-import hands from '../../assets/images/hands.webp'
+import banner_01 from '../../assets/images/banner_01.webp'
+import banner_02 from '../../assets/images/banner_02.webp'
 import Divider from '../Shared/Divider'
 
 function FeaturedProduct() {
@@ -15,29 +15,29 @@ function FeaturedProduct() {
                         aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
                         aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+                    {/* <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button> */}
                 </div>
                 <div className="carousel-inner featured-product__info">
                     <div className="carousel-item active">
-                        <img src={head} alt="Ensafe SAS products" className="featured-product__image" />
+                        <img src={banner_01} alt="Ensafe SAS products" className="featured-product__image" />
                         <div className="featured-product__info">
                             <div className="info">
-                                <h2 className="info-category">Protección para cabeza</h2>
-                                <Link to="/products/PRC" params={{ category: "PRC" }} className="outline-button" >Ver productos</Link>
+                                <h2 className="info-category">Productos del mes</h2>
+                                <Link to="/products/PDM" params={{ category: "PDM" }} className="outline-button" >Ver productos</Link>
                             </div>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img src={hands} alt="Ensafe SAS products" className="featured-product__image" />
+                        <img src={banner_02} alt="Ensafe SAS products" className="featured-product__image" />
                         <div className="featured-product__info">
                             <div className="info">
-                                <h2 className="info-category">Protección para manos</h2>
-                                <Link to="/products/PRM" params={{ category: "PRM" }} className="outline-button" >Ver productos</Link>
+                                <h2 className="info-category">Productos del mes</h2>
+                                <Link to="/products/PDM" params={{ category: "PDM" }} className="outline-button" >Ver productos</Link>
                             </div>
                         </div>
                     </div>
-                    <div className="carousel-item">
+                    {/* <div className="carousel-item">
                         <img src={feet} alt="Ensafe SAS products" className="featured-product__image" />
                         <div className="featured-product__info">
                             <div className="info">
@@ -45,7 +45,7 @@ function FeaturedProduct() {
                                 <Link to="/products/PCR" params={{ category: "PCR" }} className="outline-button" >Ver productos</Link>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
