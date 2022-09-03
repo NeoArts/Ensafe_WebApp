@@ -35,36 +35,36 @@ function App() {
     if(menuLinkElements.length > 0){
       
       switch(selectedCategory){
-        case "PDM":
-          menuLinkElements[0].classList.add('active')
-          window.location.href = window.location.protocol + "//" + window.location.host + "/products/PDM";
-          break;
+        // case "PDM":
+        //   menuLinkElements[0].classList.add('active')
+        //   window.location.href = window.location.protocol + "//" + window.location.host + "/products/PDM";
+        //   break;
         case "PRV":
-          menuLinkElements[1].classList.add('active')
+          menuLinkElements[0].classList.add('active')
           window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRV";
           break;
         case "PRC":
-          menuLinkElements[2].classList.add('active')
+          menuLinkElements[1].classList.add('active')
           window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRC";
           break;
         case "PRF":
-          menuLinkElements[3].classList.add('active')
+          menuLinkElements[2].classList.add('active')
           window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRF";
           break;
         case "PRA":
-          menuLinkElements[4].classList.add('active')
+          menuLinkElements[3].classList.add('active')
           window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRA";
           break;
         case "PRM":
-          menuLinkElements[5].classList.add('active')
+          menuLinkElements[4].classList.add('active')
           window.location.href = window.location.protocol + "//" + window.location.host + "/products/PRM";
           break;
         case "PCR":
-          menuLinkElements[6].classList.add('active')
+          menuLinkElements[5].classList.add('active')
           window.location.href = window.location.protocol + "//" + window.location.host + "/products/PCR";
           break;
         case "PAC":
-          menuLinkElements[7].classList.add('active')
+          menuLinkElements[6].classList.add('active')
           window.location.href = window.location.protocol + "//" + window.location.host + "/products/PAC";
           break;
         default:
@@ -81,10 +81,10 @@ function App() {
 
   return (
     <div>
-      <div id='promotionBanner' className='Promotion-banner show'>
+      {/* <div id='promotionBanner' className='Promotion-banner show'>
         <span onClick={() => setCategory(monthSection)}>Mira nuestros <strong><Link to={'/products/' + monthSection}>Productos del mes!</Link></strong>. Quedan {daysUntilEndOfMonth} días</span>
         <div className='absolute-item close-promotion-banner' style={{top: "0px", right: "0px", padding: "8px"}} onClick={closePromotionBanner}>x</div>
-      </div>
+      </div> */}
       <NavBar/>
       <SocialMediaFloatingBanner />
         <Switch>

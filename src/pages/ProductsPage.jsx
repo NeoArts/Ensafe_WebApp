@@ -63,29 +63,29 @@ function Productspage() {
         }
         console.log(menuLinkElements);
         switch(category){
-            case "PDM":
+            // case "PDM":
+            //     menuLinkElements[0].classList.add('active')
+            //     break;
+            case "PRV":
                 menuLinkElements[0].classList.add('active')
                 break;
-            case "PRV":
+            case "PRC":
                 menuLinkElements[1].classList.add('active')
                 break;
-            case "PRC":
+            case "PRF":
                 menuLinkElements[2].classList.add('active')
                 break;
-            case "PRF":
+            case "PRA":
                 menuLinkElements[3].classList.add('active')
                 break;
-            case "PRA":
+            case "PRM":
                 menuLinkElements[4].classList.add('active')
                 break;
-            case "PRM":
+            case "PCR":
                 menuLinkElements[5].classList.add('active')
                 break;
-            case "PCR":
-                menuLinkElements[6].classList.add('active')
-                break;
             case "PAC":
-                menuLinkElements[7].classList.add('active')
+                menuLinkElements[6].classList.add('active')
                 break;
             default:
                 menuLinkElements[0].classList.add('active')
@@ -114,9 +114,9 @@ function Productspage() {
                                 {/* <BiMenuAltRight style={{position: "absolute", top: 70}}/> */}
                                 <nav className="category-menu__container">
                                     <ul className='category-menu__ul'>
-                                        <Link to="/products/PDM" params={{ category: "PDM" }} className={"menu__item no-border category-menu__item"} >
+                                        {/* <Link to="/products/PDM" params={{ category: "PDM" }} className={"menu__item no-border category-menu__item"} >
                                             <div className="category-menu__link">Productos del mes</div>
-                                        </Link>
+                                        </Link> */}
                                         <Link to="/products/PRV" params={{ category: "PRV" }} className={"menu__item no-border category-menu__item"} >
                                             <div className="category-menu__link">Protección visual</div>
                                         </Link>
