@@ -89,7 +89,7 @@ function NavBar() {
     const productInDiscount = [];
     
     if(productsSection !== null && menu !== null){
-        menu.style.top = "calc(4.4725em + 50px)";
+        menu.style.top = "4.4725em";
     }
 
     for(var i = 0; i < products.length; i++){
