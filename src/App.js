@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import Homepage from './pages/Homepage'
+import Homepage from './pages/Homepage/Homepage'
 import ProductsPage from './pages/ProductsPage'
 import PqrsPage from './pages/PqrsPage'
 import PrivacyPolicy from './pages/PrivacyPolicyPage'

@@ -1,0 +1,42 @@
+.featured_product {
+  width: 100%;
+}
+
+.who_we_are {
+  width: 100%;
+  height: calc(100vh - 4.4662em);
+  min-height: 35em;
+}
+
+.mission {
+  height: calc(100vh - 4.4662em);
+  min-height: 32.5em;
+  padding: 0em 6.25em;
+  padding-top: 2.5em;
+  position: relative;
+  background: #F6F7FB;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.our_products {
+  padding: 0em 6.25em;
+  background-color: #F6F7FB;
+  height: calc(100vh - 4.4662em);
+  min-height: 30.625em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.company {
+  width: 100%;
+  height: calc(100vh - 4.4662em);
+  min-height: 30.625em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #F6F7FB;
+  position: relative;
+}/*# sourceMappingURL=homepage.module.css.map */

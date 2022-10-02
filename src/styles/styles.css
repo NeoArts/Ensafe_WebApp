@@ -10635,10 +10635,6 @@ a {
 /*                                  Homepage                                  */
 /* -------------------------------------------------------------------------- */
 /* ------------------------------ Main section ------------------------------ */
-.featured-product {
-  width: 100%;
-}
-
 .featured-product__container {
   width: 100%;
   position: relative;
@@ -10712,7 +10708,7 @@ a {
   border-radius: 0.5em;
   background-color: rgba(255, 255, 255, 0.1);
   position: relative;
-  top: 65%;
+  top: 40%;
 }
 
 .info-category {
@@ -10759,16 +10755,6 @@ a {
 }
 
 /* -------------------------- Our products section -------------------------- */
-.our-products {
-  padding: 0em 6.25em;
-  background-color: #F6F7FB;
-  height: calc(100vh - 4.4662em);
-  min-height: 30.625em;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
 .title-gradient-background {
   display: flex;
   height: 5em;
@@ -10854,12 +10840,6 @@ a {
 }
 
 /* --------------------------- who we are section --------------------------- */
-.who-we-are {
-  width: 100%;
-  height: calc(100vh - 4.4662em);
-  min-height: 35em;
-}
-
 .who-we-are__info-container {
   height: calc(100vh - 4.4662em);
   min-height: 35em;
@@ -10870,12 +10850,6 @@ a {
   justify-content: center;
   align-items: flex-end;
   padding: 0em 6.25em;
-}
-
-.who-we-are__info-container-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
 }
 
 .who-we-are__info {
@@ -10908,18 +10882,6 @@ a {
 }
 
 /* --------------------------- Mission and vision --------------------------- */
-.mission-vision {
-  height: calc(100vh - 4.4662em);
-  min-height: 32.5em;
-  padding: 0em 6.25em;
-  padding-top: 2.5em;
-  position: relative;
-  background: #F6F7FB;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .mission-vision__container {
   display: flex;
   align-items: center;
@@ -10954,21 +10916,6 @@ a {
 }
 
 /* --------------------------------- Company -------------------------------- */
-.company {
-  width: 100%;
-  height: calc(100vh - 4.4662em);
-  min-height: 30.625em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #F6F7FB;
-  position: relative;
-}
-
-.company-container {
-  padding: 0em 6.25em;
-}
-
 .company__container {
   margin: 0em 6.25em;
   display: flex;
@@ -11329,7 +11276,10 @@ a {
   width: 20%;
   min-width: 300px;
   padding: 0em 6.25em;
+  background-color: #0A85BF;
+  height: 50px;
   display: flex;
+  align-items: center;
 }
 
 .category-header__container {
@@ -11351,10 +11301,8 @@ a {
 
 .category-menu__ul {
   width: 100%;
-  padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   overflow-x: auto;
 }
@@ -11404,8 +11352,14 @@ a {
   padding-top: 4.4662em;
 }
 
+.products-grid__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
 .product-grid__item {
-  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 0.75rem;
   position: relative;
   color: #010101;
@@ -11439,8 +11393,6 @@ a {
 
 .product-info__price-container {
   display: flex;
-  position: absolute;
-  bottom: 0px;
   justify-content: space-between;
   align-items: center;
 }
@@ -11676,7 +11628,7 @@ a {
   position: absolute;
 }
 
-.relative-item {
+.relative_item {
   float: right;
   margin: 1.875em 0em;
 }
@@ -11695,17 +11647,6 @@ a {
 
 .no-border {
   border: none;
-}
-
-.max-p-width {
-  max-width: 1860px;
-  margin: auto;
-}
-
-.max-p-width-nm {
-  max-width: 1860px;
-  width: 100%;
-  margin: 0 auto;
 }
 
 @media only screen and (max-width: 2500px) {
@@ -11852,8 +11793,8 @@ a {
   .mission-vision__info {
     padding: 1em;
   }
-  .company-container {
-    padding: 0em 2.5em;
+  .company__container {
+    margin: 0em 2.5em;
   }
   .footer__content {
     margin: 1.5em 2.5em;

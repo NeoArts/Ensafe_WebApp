@@ -1,0 +1,54 @@
+$black: #000000;
+$blackui: #010101;
+$dark-hover: rgba(0, 0, 0, 0.4);
+$darkblue-primary: #2A2E92;
+$gray: #808080;
+$light-hover: rgba(255, 255, 255, 0.1);
+$lightblue-primary: #0A85BF;
+$primary-light: #F6F7FB;
+$white: #FFFFFF;
+$whiteui: #f1f1f1;
+$yellow-primary: #FFF100;
+
+.featured_product {
+    width: 100%;
+}
+
+.who_we_are {
+    width: 100%;
+    height: calc(100vh - 4.4662em);
+    min-height: 35em;
+}
+
+.mission {
+    height: calc(100vh - 4.4662em);
+    min-height: 32.5em;
+    padding: 0em 6.25em;
+    padding-top: 2.5em;
+    position: relative;
+    background: $primary-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.our_products {
+    padding: 0em 6.25em;
+    background-color: $primary-light;
+    height: calc(100vh - 4.4662em);
+    min-height: 30.625em;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.company {
+    width: 100%;
+    height: calc(100vh - 4.4662em);
+    min-height: 30.625em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: $primary-light;
+    position: relative;
+}

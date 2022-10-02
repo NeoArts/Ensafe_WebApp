@@ -3,7 +3,7 @@ import React from 'react'
 import feet from '../../assets/images/feets.webp'
 import banner_01 from '../../assets/images/banner_01.webp'
 import banner_02 from '../../assets/images/banner_02.webp'
-import Divider from '../Shared/Divider'
+import Divider from '../Shared/Divider/Divider'
 
 function FeaturedProduct() {
 
