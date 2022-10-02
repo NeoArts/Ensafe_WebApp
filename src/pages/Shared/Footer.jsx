@@ -38,7 +38,8 @@ function Footer() {
                         </div>
                     </div>
                     <div className="footer__copyright">
-                        <span>&copy;</span>2021. Todos los derechos reservados * Diseñado por <a target={"_blank"} href="https://www.neoarts.com.co">NeoArts</a>
+                        <span>&copy;</span>2021. Todos los derechos reservados * Diseñado por <a target={"_blank"} href="https://www.neoarts.com.co">NeoArts</a> 
+                        <div style={{fontSize: "8px"}}>V 1.3.3</div>
                     </div>
                 </div>
             </footer>
