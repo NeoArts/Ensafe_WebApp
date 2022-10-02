@@ -13,7 +13,7 @@ function SocialMediaFloatingBanner() {
                     <a href="https://www.instagram.com/ensafe_sas/" aria-label="Instagram" target="_blank" rel="noreferrer" className="social-media__link">
                         <FontAwesomeIcon icon={faInstagramSquare} size='2x' className="social-media__icon" />
                     </a>
-                    <a href="https://wa.me/573202894536?text=Buenos%20días%20equipo%20Ensafe" aria-label="Whatsapp" target="_blank" rel="noreferrer" className="social-media__link">
+                    <a href="https://wa.me/573157891891?text=Buenos%20días%20equipo%20Ensafe" aria-label="Whatsapp" target="_blank" rel="noreferrer" className="social-media__link">
                         <FontAwesomeIcon icon={faWhatsappSquare} size='2x' className="social-media__icon" />
                     </a>
                 </div>

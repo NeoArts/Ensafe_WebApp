@@ -2,7 +2,7 @@ import { faPhone, faQuestion, faInfo } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Divider from '../Shared/Divider'
+import Divider from '../Shared/Divider/Divider'
 
 function WhoWeAreSection() {
     return (
@@ -26,7 +26,7 @@ function WhoWeAreSection() {
                         <FontAwesomeIcon icon={faInfo} size='1x' />
                     </Link>
                 </div>
-                <Divider title="Misión y visión" className="relative-item" color="#FFFFFF" id="mission-vision-divider" />
+                <Divider title="Misión y visión" className="relative_item" color="#FFFFFF" id="mission-vision-divider" />
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
+import global from './divider.module.css'
 
 const scrollWindow = (id) => {
     switch (id) {
@@ -44,11 +45,11 @@ const scrollWindow = (id) => {
 }
 
 class Divider extends Component {
-
     render() {
+        console.log(this.props.className);
         return (
             <div>
-                <div className={"divider " + this.props.className} id={this.props.id} style={{ color: this.props.color }} onClick={() => scrollWindow(this.props.id)}>
+                <div className={"divider " + global[this.props.className]} id={this.props.id} style={{ color: this.props.color }} onClick={() => scrollWindow(this.props.id)}>
                     <div className="divider__container">
                         <h2 className="divider__title">{this.props.title}</h2>
                         <FontAwesomeIcon icon={this.props.up ? faSortUp : faSortDown} style={this.props.up ? { marginTop: '0.7em' } : {}} size='2x' className='divider__icon' id="divider__icon" />

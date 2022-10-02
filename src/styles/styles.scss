@@ -405,9 +405,9 @@ a {
 /* ------------------------------ Main section ------------------------------ */
 
 
-.featured-product {
-  width: 100%;
-}
+// .featured-product {
+//   width: 100%;
+// }
 
 .featured-product__container {
   width: 100%;
@@ -528,15 +528,7 @@ a {
 
 /* -------------------------- Our products section -------------------------- */
 
-.our-products {
-  padding: 0em 6.25em;
-  background-color: $primary-light;
-  height: calc(100vh - 4.4662em);
-  min-height: 30.625em;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
+
 
 .title-gradient-background {
   display: flex;
@@ -624,11 +616,7 @@ a {
 
 /* --------------------------- who we are section --------------------------- */
 
-.who-we-are {
-  width: 100%;
-  height: calc(100vh - 4.4662em);
-  min-height: 35em;
-}
+
 
 .who-we-are__info-container {
   height: calc(100vh - 4.4662em);
@@ -675,17 +663,7 @@ a {
 
 /* --------------------------- Mission and vision --------------------------- */
 
-.mission-vision {
-  height: calc(100vh - 4.4662em);
-  min-height: 32.5em;
-  padding: 0em 6.25em;
-  padding-top: 2.5em;
-  position: relative;
-  background: $primary-light;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 
 .mission-vision__container {
   display: flex;
@@ -722,16 +700,7 @@ a {
 
 /* --------------------------------- Company -------------------------------- */
 
-.company {
-  width: 100%;
-  height: calc(100vh - 4.4662em);
-  min-height: 30.625em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: $primary-light;
-  position: relative;
-}
+
 
 .company__container {
   margin: 0em 6.25em;
@@ -1436,7 +1405,7 @@ a {
   position: absolute;
 }
 
-.relative-item {
+.relative_item {
   float: right;
   margin: 1.875em 0em;
 }
