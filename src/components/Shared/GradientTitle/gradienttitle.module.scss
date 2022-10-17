@@ -1,0 +1,42 @@
+$black: #000000;
+$blackui: #010101;
+$dark-hover: rgba(0, 0, 0, 0.2);
+$darkblue-primary: #2A2E92;
+$gray: #808080;
+$light-hover: rgba(255, 255, 255, 0.1);
+$lightblue-primary: #0A85BF;
+$primary-light: #F6F7FB;
+$white: #FFFFFF;
+$whiteui: #f1f1f1;
+$yellow-primary: #FFF100;
+
+.title_gradient_background {
+  display: flex;
+  height: 5em;
+  background: linear-gradient(to right, $lightblue-primary, $darkblue-primary);
+  border-radius: 0.5em;
+  justify-content: center;
+  align-items: center;
+  padding: 0em 1.875em;
+}
+
+
+.title_gradient__title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: $white;
+  border-radius: 0.5em;
+  margin: 0;
+}
+
+.products-grid__container.filled .title-gradient__title {
+  font-size: 1.2em;
+}
+
+@media only screen and (max-width: 520px) {
+  .title_gradient_background {
+    padding: 0.625em 1.875em;
+    height: auto;
+  }
+}

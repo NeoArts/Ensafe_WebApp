@@ -1,6 +1,6 @@
 import React from 'react'
 import lifeJacket from '../../assets/images/life-jacket.svg'
-import GradientTitle from '../Shared/GradientTitle'
+import GradientTitle from '../Shared/GradientTitle/GradientTitle'
 import helmet from '../../assets/images/helmet.svg'
 import gloves from '../../assets/images/gloves.svg'
 import boots from '../../assets/images/boots.svg'

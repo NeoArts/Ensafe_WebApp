@@ -24,7 +24,7 @@ function Homepage() {
     
     const LazyWhoWeAre = React.lazy(() => import('../../components/Homepage/WhoWeAreSection'));
     const LazyMissionVision = React.lazy(() => import('../../components/Homepage/MissionVison'));
-    const LazyCompany = React.lazy(() => import('../../components/Homepage/Company'));
+    const LazyCompany = React.lazy(() => import('../../components/Homepage/Company/Company'));
 
     return (
         <div>
