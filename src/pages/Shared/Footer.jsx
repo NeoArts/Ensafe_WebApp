@@ -1,5 +1,5 @@
 import React from 'react'
-import Menu from '../../components/Shared/Menu'
+import Menu from '../../components/Shared/Menu/Menu'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { faPhone } from '@fortawesome/free-solid-svg-icons'

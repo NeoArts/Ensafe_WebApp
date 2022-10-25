@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import logoSVG from '../../assets/images/logoSVG.svg'
 import logoCircleSVG from '../../assets/images/LogoCircleEnsafe.png'
-import Menu from '../../components/Shared/Menu'
+import Menu from '../../components/Shared/Menu/Menu'
 import database from '../../database/ProductsLocalDatabase.json'
 import ProductItem from '../../components/ProductsPage/ProductItem';
 import {
@@ -19,10 +19,10 @@ function NavBar() {
         var menuTop = document.getElementsByClassName('top')[0];
         var menuMiddle = document.getElementsByClassName('middle')[0];
         var menuBottom = document.getElementsByClassName('bottom')[0];
-        
 
+        setMenuOpen(!menuOpen);
+        
         if (menuOpen) {
-            setMenuOpen(false);
             menu.classList.remove('open');
             menu.style.right = '-9999px';
             menu.style.visibility = 'hidden';
@@ -31,7 +31,6 @@ function NavBar() {
             menuBottom.classList.remove('rotate-left');
         }
         else {
-            setMenuOpen(true);
             menu.classList.add('open');
             menu.style.visibility = 'visible';
             menu.style.right = '0px';
@@ -95,53 +94,40 @@ function NavBar() {
     for(var i = 0; i < products.length; i++){
         if(products[i].productCategoryId === category){
             if(products[i].productDiscount > 0){
-                productInDiscount.push(<ProductItem id={products[i].productId} price={products[i].productPrice} name={products[i].productName} category={products[i].productCategoryId}
-                    description={products[i].productDescription} colors={products[i].procuctColors} image={Object.values(products[i].procuctColors)[0]}
-                    discount={products[i].productDiscount} amount={products[i].productAmount}/>);
+                productInDiscount.push(
+                  <ProductItem 
+                    id={products[i].productId} 
+                    price={products[i].productPrice} 
+                    name={products[i].productName} 
+                    category={products[i].productCategoryId}
+                    description={products[i].productDescription} 
+                    colors={products[i].procuctColors} 
+                    image={Object.values(products[i].procuctColors)[0]}
+                    discount={products[i].productDiscount} 
+                    amount={products[i].productAmount}
+                  />);
             }
-            productElements.push(<ProductItem id={products[i].productId} price={products[i].productPrice} name={products[i].productName} category={products[i].productCategoryId}
-                                            description={products[i].productDescription} colors={products[i].procuctColors} image={Object.values(products[i].procuctColors)[0]}
-                                            discount={products[i].productDiscount} amount={products[i].productAmount}/>);
+            productElements.push(
+              <ProductItem 
+                id={products[i].productId} 
+                price={products[i].productPrice} 
+                name={products[i].productName} 
+                category={products[i].productCategoryId}
+                description={products[i].productDescription} colors={products[i].procuctColors} image={Object.values(products[i].procuctColors)[0]}
+                discount={products[i].productDiscount} amount={products[i].productAmount}
+              />);                            
         }
     }
 
     function setSelectedCategory(selectedCategory){
-        console.log("select categort")
+        var categories = ["PDM","PRV","PRC","PRF","PRA","PRM","PCR","PAC"];
         var menuLinkElements = document.getElementsByClassName('category-menu__link');
-        console.log(menuLinkElements);
-        for(var i = 0; i < menuLinkElements.length; i++){
-            menuLinkElements[i].classList.remove('active');
-        }
-        console.log(selectedCategory);
-        switch(selectedCategory){
-            case "PDM":
-                menuLinkElements[0].classList.add('active')
-                break;
-            case "PRV":
-                menuLinkElements[1].classList.add('active')
-                break;
-            case "PRC":
-                menuLinkElements[2].classList.add('active')
-                break;
-            case "PRF":
-                menuLinkElements[3].classList.add('active')
-                break;
-            case "PRA":
-                menuLinkElements[4].classList.add('active')
-                break;
-            case "PRM":
-                menuLinkElements[5].classList.add('active')
-                break;
-            case "PCR":
-                menuLinkElements[6].classList.add('active')
-                break;
-            case "PAC":
-                menuLinkElements[7].classList.add('active')
-                break;
-            default:
-                menuLinkElements[0].classList.add('active')
-                break;
-        }
+
+        Array.from(menuLinkElements).forEach((menuElement) => {
+          menuElement.classList.remove('active');
+        });
+        
+        menuLinkElements[categories.indexOf(selectedCategory)].classList.add('active')
     }
 
     useEffect(() => {

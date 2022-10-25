@@ -10431,32 +10431,6 @@ a {
   align-items: center;
 }
 
-.shopping-menu__username {
-  margin: 0;
-  margin-left: 0.625em;
-  color: #2A2E92;
-}
-
-.shopping-menu__nav {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  margin-left: 1.25em;
-  position: relative;
-}
-
-.shopping-menu__item {
-  margin-left: 0.625em;
-  color: #2A2E92;
-  background-color: #F6F7FB;
-  align-items: center;
-}
-
-.shopping-menu__item:hover {
-  cursor: pointer;
-}
-
 .logo {
   width: 18.75em;
   padding: 0 !important;

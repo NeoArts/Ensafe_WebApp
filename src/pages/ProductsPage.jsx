@@ -58,39 +58,13 @@ function Productspage() {
     var menuLinkElements = document.getElementsByClassName('category-menu__link');
     
     if(menuLinkElements.length > 0){
-        for(var j = 0; j < menuLinkElements.length; j++){
-            menuLinkElements[j].classList.remove('active');
-        }
-        console.log(menuLinkElements);
-        switch(category){
-            // case "PDM":
-            //     menuLinkElements[0].classList.add('active')
-            //     break;
-            case "PRV":
-                menuLinkElements[0].classList.add('active')
-                break;
-            case "PRC":
-                menuLinkElements[1].classList.add('active')
-                break;
-            case "PRF":
-                menuLinkElements[2].classList.add('active')
-                break;
-            case "PRA":
-                menuLinkElements[3].classList.add('active')
-                break;
-            case "PRM":
-                menuLinkElements[4].classList.add('active')
-                break;
-            case "PCR":
-                menuLinkElements[5].classList.add('active')
-                break;
-            case "PAC":
-                menuLinkElements[6].classList.add('active')
-                break;
-            default:
-                menuLinkElements[0].classList.add('active')
-                break;
-        }
+      var categories = ["PRV","PRC","PRF","PRA","PRM","PCR","PAC"];
+
+      Array.from(menuLinkElements).forEach((menuElement) => {
+        menuElement.classList.remove('active');
+      });
+      
+      menuLinkElements[categories.indexOf(category)].classList.add('active')
     }
     
     window.scrollTo(0, 0);
