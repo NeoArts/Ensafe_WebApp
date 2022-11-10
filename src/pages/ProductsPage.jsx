@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import ProductItem from '../components/ProductsPage/ProductItem';
 import GradientTitle from '../components/Shared/GradientTitle/GradientTitle';
 import database from '../database/ProductsLocalDatabase.json'
-import { BiMenuAltRight } from 'react-icons/bi'
 import {
     Link
 } from 'react-router-dom'

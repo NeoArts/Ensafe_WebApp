@@ -124,47 +124,6 @@ a {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                          Social media floating bar                         */
-/* -------------------------------------------------------------------------- */
-
-.social-media {
-  width: 2.5em;
-  padding: 0.125em 0em;
-  position: fixed;
-  transform: translateY(50vh);
-  left: 0;
-  background: #fff;
-  z-index: 9999;
-  border-radius: 0.5em;
-  box-shadow: 0 0 0.9375em $gray;
-}
-
-.social-media__container {
-  width: 100%;
-  color: $darkblue-primary;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.social-media__icon {
-  transition: all 100ms ease-in-out;
-  margin: 0.125em;
-}
-
-.social-media__icon:hover {
-  transform: scale(140%, 140%);
-  cursor: pointer;
-}
-
-.social-media__link {
-  text-decoration: none;
-  color: $darkblue-primary;
-  border: none;
-}
-
-/* -------------------------------------------------------------------------- */
 /*                                   Nav Bar                                  */
 /* -------------------------------------------------------------------------- */
 

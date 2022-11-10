@@ -3,7 +3,6 @@ import {
     Link
 } from 'react-router-dom'
 import BuyProductButton from './BuyProductButton';
-import ProductStock from './ProductStock';
 
 function ProductItem(props) {
 
