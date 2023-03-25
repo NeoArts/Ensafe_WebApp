@@ -5,12 +5,6 @@ function PrivacyPolicyPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
         var menu = document.getElementById('menu');
-        var categoryHeader = document.getElementById('categoryHeader');
-
-        if(categoryHeader !== null){
-            categoryHeader.classList.add('hide');
-        }
-
         if(menu !== null){
             menu.style.top = "4.4725em"
         }

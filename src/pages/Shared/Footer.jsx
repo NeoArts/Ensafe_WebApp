@@ -8,6 +8,15 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
 
+    const [year, setYear] = React.useState(new Date().getFullYear());
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+        setYear(new Date().getFullYear());
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div>
             <footer className="footer">
@@ -38,8 +47,8 @@ function Footer() {
                         </div>
                     </div>
                     <div className="footer__copyright">
-                        <span>&copy;</span>2021. Todos los derechos reservados * Diseñado por <a target={"_blank"} rel="noreferrer" href="https://www.neoarts.com.co">NeoArts</a> 
-                        <div style={{fontSize: "8px"}}>V 1.3.3</div>
+                        <span>&copy;</span>{year}. Todos los derechos reservados * Diseñado por <a target={"_blank"} rel="noreferrer" href="https://www.neoarts.com.co">NeoArts</a> 
+                        <div style={{fontSize: "8px"}}>V 1.4.8</div>
                     </div>
                 </div>
             </footer>

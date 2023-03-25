@@ -169,7 +169,17 @@ a {
   transition: all 300ms ease-in-out;
   padding: 0;
   margin-bottom: 0;
-  visibility: hidden;
+}
+
+.expanded-menu{
+    position: absolute;
+    right: 0px;
+    top: 4.4725em;
+    width: 100%;
+    background: #F6F7FB;
+    padding: 1em 0em;
+    flex-direction: column;
+    align-items: start;
 }
 
 .menu-horizontal {
@@ -180,7 +190,6 @@ a {
 
 .menu-vertical {
   margin-bottom: 0.625em !important;
-  visibility: visible;
 }
 
 .menu__item {
@@ -282,6 +291,16 @@ a {
   color: $darkblue-primary;
   border: none;
   background-color: $primary-light;
+}
+
+.close {
+    right: -9999px;
+    visibility: hidden;
+}
+
+.open {
+    right: 0px;
+    visibility: visible;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1260,6 +1279,7 @@ a {
   padding: 0.3125em 1.125em;
   border-radius: 0.75em;
   border: solid 1px $lightblue-primary;
+  min-height: 60px;
 }
 
 /* -------------------------------------------------------------------------- */

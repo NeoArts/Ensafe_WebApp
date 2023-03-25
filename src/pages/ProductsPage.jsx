@@ -1,134 +1,62 @@
 import React, { useEffect } from 'react'
 import ProductItem from '../components/ProductsPage/ProductItem';
-import GradientTitle from '../components/Shared/GradientTitle/GradientTitle';
-import database from '../database/ProductsLocalDatabase.json'
-import {
-    Link
-} from 'react-router-dom'
+import database from '../constants/poducts.json'
+import { Link } from 'react-router-dom'
+import { productsCategoriesOptions } from '../constants/page_data'
 
 function Productspage() {
     var category = window.location.href.split("/").pop();
     var products = database.productsDatabase;
-    const productElements = [];
-    const productInDiscount = [];
-
-    for(var i = 0; i < products.length; i++){
-        if(products[i].productCategoryId.includes(category)){
-            if(products[i].productDiscount > 0  && products[i].productCategoryId === database.monthSection){
-                productInDiscount.push(<ProductItem key={products[i].productId} id={products[i].productId} price={products[i].productPrice} name={products[i].productName} category={products[i].productCategoryId}
-                    description={products[i].productDescription} colors={products[i].procuctColors} tallas={products[i].productSize} image={Object.values(products[i].procuctColors)[0]}
-                    discount={products[i].productDiscount} amount={products[i].productAmount}/>);
-            }
-            productElements.push(<ProductItem key={products[i].productId} id={products[i].productId} price={products[i].productPrice} name={products[i].productName} category={products[i].productCategoryId}
-                                            description={products[i].productDescription} colors={products[i].procuctColors} tallas={products[i].productSize} image={Object.values(products[i].procuctColors)[0]}
-                                            discount={products[i].productDiscount} amount={products[i].productAmount}/>);
-        }
-    }
-
-    var titlePromotion = "";
-
-    switch(database.monthSection){
-        case "PRV":
-            titlePromotion = "visual";
-            break;
-        case "PRC":
-            titlePromotion = "de cabeza";
-            break;
-        case "PRF":
-            titlePromotion = "facial";
-            break;
-        case "PRA":
-            titlePromotion = "auditiva";
-            break;
-        case "PRM":
-            titlePromotion = "manual";
-            break;
-        case "PCR":
-            titlePromotion = "corporal";
-            break;
-        case "PAC":
-            titlePromotion = "anti-caída";
-            break;
-        default:
-            titlePromotion = "visual";
-            break;
-    }
-
     var menuLinkElements = document.getElementsByClassName('category-menu__link');
     
-    if(menuLinkElements.length > 0){
-      var categories = ["PRV","PRC","PRF","PRA","PRM","PCR","PAC"];
-
-      Array.from(menuLinkElements).forEach((menuElement) => {
-        menuElement.classList.remove('active');
-      });
-      
-      menuLinkElements[categories.indexOf(category)].classList.add('active')
-    }
-    
-    window.scrollTo(0, 0);
-
     useEffect(() => {
-        var categoryHeader = document.getElementById('categoryHeader');
-
-        if(categoryHeader !== null){
-            categoryHeader.classList.remove('hide');
+        if(menuLinkElements.length > 0){
+            var categories = Array.from(productsCategoriesOptions).map((item) => {
+                return (item.category);
+            });
+    
+            Array.from(menuLinkElements).forEach((menuElement) => {
+                menuElement.classList.remove('active');
+            });
+          
+            menuLinkElements[categories.indexOf(category)].classList.add('active')
         }
+        
+        window.scrollTo(0, 0);
     });
 
     return (
         <>
         <section className='products' id='productsSection'>
                 <div className={"products__container max-p-width"}>
-                    <div id='categoryHeader' className={"category-header hide"}>
+                    <div id='categoryHeader' className={"category-header"}>
                         <div className="category-header__container">
                             <div className="category-menu">
                                 <h2 className='category-menu__title'>Categorías</h2>
-                                {/* <BiMenuAltRight style={{position: "absolute", top: 70}}/> */}
                                 <nav className="category-menu__container">
                                     <ul className='category-menu__ul'>
-                                        {/* <Link to="/products/PDM" params={{ category: "PDM" }} className={"menu__item no-border category-menu__item"} >
-                                            <div className="category-menu__link">Productos del mes</div>
-                                        </Link> */}
-                                        <Link to="/products/PRV" params={{ category: "PRV" }} className={"menu__item no-border category-menu__item"} >
-                                            <div className="category-menu__link">Protección visual</div>
-                                        </Link>
-                                        <Link to="/products/PRC" params={{ category: "PRC" }} className={"menu__item no-border category-menu__item"} >
-                                            <div className="category-menu__link">Protección cabeza</div>
-                                        </Link>
-                                        <Link to="/products/PRF" params={{ category: "PRF" }} className={"menu__item no-border category-menu__item"} >
-                                            <div className="category-menu__link">Protección facial</div>
-                                        </Link>
-                                        <Link to="/products/PRA" params={{ category: "PRA" }} className={"menu__item no-border category-menu__item"} >
-                                            <div className="category-menu__link">Protección auditiva</div>
-                                        </Link>
-                                        <Link to="/products/PRM" params={{ category: "PRM" }} className={"menu__item no-border category-menu__item"} >
-                                            <div className="category-menu__link">Protección manual</div>
-                                        </Link>
-                                        <Link to="/products/PCR" params={{ category: "PCR" }} className={"menu__item no-border category-menu__item"} >
-                                            <div className="category-menu__link">Protección corporal</div>
-                                        </Link>
-                                        <Link to="/products/PAC" params={{ category: "PAC" }} className={"menu__item no-border category-menu__item"} >
-                                            <div className="category-menu__link">Protección anti-caída</div>
-                                        </Link>
+                                        {Array.from(productsCategoriesOptions).map((item) => {
+                                            return(
+                                                <Link to={item.link} params={{ category: item.category }} className={"menu__item no-border category-menu__item"} >
+                                                    <div className="category-menu__link">{item.name}</div>
+                                                </Link>
+                                            )
+                                        })}
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                     </div>
                     <div className='products-grid-container'>
-                        {(productInDiscount.length > 0) &&
-                        <div>
-                            <div className={"products-grid promotion-grid"} id='productGrid'>
-                                <div className={(productInDiscount.length > 0) ? "products-grid__container filled" : "products-grid__container"} id="productsGridContainer">
-                                    <GradientTitle title={"Mes de la protección " + titlePromotion}/>
-                                    {productInDiscount}
-                                </div>
-                            </div>
-                        </div>}
                         <div className="products-grid" id='productGrid'>
                             <div className="products-grid__container" id="productsGridContainer">
-                                {productElements}
+                                {Array.from(products).map((product) => {
+                                    if(product.productCategoryId.includes(category)){
+                                        return (
+                                            <ProductItem product={product}/>
+                                        );
+                                    }
+                                })}
                             </div>
                         </div>
                     </div>

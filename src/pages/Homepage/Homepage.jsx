@@ -14,12 +14,6 @@ function Homepage() {
         if(menu !== null){
             menu.style.top = "4.4725em"
         }
-
-        var categoryHeader = document.getElementById('categoryHeader');
-
-        if(categoryHeader !== null){
-            categoryHeader.classList.add('hide');
-        }
     }, []);
     
     const LazyWhoWeAre = React.lazy(() => import('../../components/Homepage/WhoWeAreSection'));

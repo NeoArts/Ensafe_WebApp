@@ -1,14 +1,14 @@
 import React, { Component, useEffect } from 'react'
 import BuyProductButton from './BuyProductButton';
-import database from '../../database/ProductsLocalDatabase.json'
+import database from '../../constants/poducts.json'
 
 class ProductDetailsPage extends Component {
     render(){
-
+        debugger;
         var productId = window.location.href.split("/").pop();
         var product = database.productsDatabase.find(p => p.productId === productId);
 
-        var productColors = product.procuctColors;
+        var productColors = product.productColors;
         var firstImageUrl = "";
         const colors = [];
 
@@ -36,13 +36,6 @@ class ProductDetailsPage extends Component {
         function SelectFirstColorButton(){
             useEffect(() => {
                 document.getElementsByClassName('outline-button-blue')[0].classList.add("active");
-
-                var categoryHeader = document.getElementById('categoryHeader');
-
-                if(categoryHeader !== null){
-                    categoryHeader.classList.add('hide');
-                }
-
                 window.scrollTo(0, 0);
             },[]);
 
@@ -69,8 +62,8 @@ class ProductDetailsPage extends Component {
                             <br />
                             <div className="product-info__buy-section">
                                 <div className="product-info__prices">
-                                    <p className="product-info__price">${(product.productDiscount > 0) ? (product.productPrice - (product.productPrice * product.productDiscount)) : product.productPrice}</p>
-                                    {(product.productDiscount > 0) && <p className="product-info__last-price">${product.productPrice}</p>}
+                                    {/* <p className="product-info__price">${(product.productDiscount > 0) ? (product.productPrice - (product.productPrice * product.productDiscount)) : product.productPrice}</p>
+                                    {(product.productDiscount > 0) && <p className="product-info__last-price">${product.productPrice}</p>} */}
                                 </div>
                                 {(product.productAmount > 0) && <BuyProductButton name={product.productName} id={product.productId} category={product.productCategoryId}/>}
                             </div>
