@@ -1,0 +1,48 @@
+$black: #000000;
+$blackui: #010101;
+$dark-hover: rgba(0, 0, 0, 0.2);
+$darkblue-primary: #2A2E92;
+$gray: #808080;
+$light-hover: rgba(255, 255, 255, 0.1);
+$lightblue-primary: #0A85BF;
+$primary-light: #F6F7FB;
+$white: #FFFFFF;
+$whiteui: #f1f1f1;
+$yellow-primary: #FFF100;
+
+.social_media{
+  width: 2.5em;
+  padding: 0.125em 0em;
+  position: fixed;
+  transform: translateY(50vh);
+  left: 0;
+  background: #fff;
+  z-index: 9999;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.9375em $gray;
+}
+
+.social_media__container{
+  width: 100%;
+  color: $darkblue-primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.social_media__link{
+  text-decoration: none;
+  color: $darkblue-primary;
+  border: none;
+}
+
+.social_media__icon{
+  transition: all 100ms ease-in-out;
+  margin: 0.125em;
+}
+
+.social_media__icon:hover {
+  transform: scale(140%, 140%);
+  cursor: pointer;
+}

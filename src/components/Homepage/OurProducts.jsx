@@ -1,10 +1,12 @@
 import React from 'react'
-import lifeJacket from '../../images/life-jacket.svg'
-import GradientTitle from '../GradientTitle'
-import helmet from '../../images/helmet.svg'
-import gloves from '../../images/gloves.svg'
-import boots from '../../images/boots.svg'
-import clip from '../../images/clip.svg'
+import lifeJacket from '../../assets/images/life-jacket.svg'
+import GradientTitle from '../Shared/GradientTitle/GradientTitle'
+import helmet from '../../assets/images/helmet.svg'
+import gloves from '../../assets/images/gloves.svg'
+import boots from '../../assets/images/boots.svg'
+import clip from '../../assets/images/clip.svg'
+import { Link } from 'react-router-dom'
+import {AiOutlineArrowRight} from 'react-icons/ai'
 
 function OurProducts() {
     return (
@@ -15,27 +17,31 @@ function OurProducts() {
             </div>
             <div className="grid">
                 <div className="grid__container">
-                    <button className="grid__item transparent-background">
+                    <Link to="/products/PRC" className="grid__item transparent-background">
                         <img src={helmet} alt="" className="grid__image" />
                         <p className="grid__title">Protección de cabeza</p>
-                    </button>
-                    <button className="grid__item transparent-background">
+                    </Link>
+                    <Link to="/products/PCR" className="grid__item transparent-background">
                         <img src={boots} alt="" className="grid__image" />
                         <p className="grid__title">Protección de pies</p>
-                    </button>
-                    <button className="grid__item transparent-background">
+                    </Link>
+                    <Link to="/products/PAC" className="grid__item transparent-background">
                         <img src={clip} alt="" className="grid__image" />
                         <p className="grid__title">Protección anticaída</p>
-                    </button>
-                    <button className="grid__item transparent-background">
+                    </Link>
+                    <Link to="/products/PCR" className="grid__item transparent-background">
                         <img src={lifeJacket} alt="" className="grid__image" />
                         <p className="grid__title">Protección de cuerpo</p>
-                    </button>
-                    <button className="grid__item transparent-background">
+                    </Link>
+                    <Link to="/products/PRM" className="grid__item transparent-background">
                         <img src={gloves} alt="" className="grid__image" />
                         <p className="grid__title">Protección de manos</p>
-                    </button>
+                    </Link>
                 </div>
+            </div>
+            <div className='our-products__see-more'>
+                <Link to="/products/PRV" className='our-products__see-more__link' >Ver productos</Link>
+                <AiOutlineArrowRight/>
             </div>
         </div>
     )

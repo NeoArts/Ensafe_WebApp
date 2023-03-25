@@ -1,0 +1,88 @@
+.featured_product {
+  width: 100%;
+}
+
+.who_we_are {
+  width: 100%;
+  height: calc(100vh - 4.4662em);
+  min-height: 35em;
+}
+
+.mission {
+  height: calc(100vh - 4.4662em);
+  min-height: 32.5em;
+  padding: 0em 6.25em;
+  padding-top: 2.5em;
+  position: relative;
+  background: #F6F7FB;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.our_products {
+  padding: 0em 6.25em;
+  background-color: #F6F7FB;
+  height: calc(100vh - 4.4662em);
+  min-height: 30.625em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.company {
+  width: 100%;
+  height: calc(100vh - 4.4662em);
+  min-height: 30.625em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #F6F7FB;
+  position: relative;
+}
+
+@media only screen and (max-width: 1200px) {
+  .mission {
+    height: auto;
+  }
+}
+@media only screen and (max-width: 940px) {
+  .who-we-are {
+    height: auto;
+  }
+  .our_products {
+    height: auto;
+    padding: 0em 2.5em;
+  }
+  .mission {
+    padding: 0em 2.5em;
+    padding-top: 2.5em;
+    height: auto;
+  }
+}
+@media only screen and (max-height: 45em) {
+  .our_products {
+    height: auto;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .company {
+    height: auto;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .our_products {
+    height: auto;
+  }
+  .mission {
+    padding: 2.5em 2.5em;
+  }
+  .company {
+    padding-bottom: 2.5em;
+  }
+}
+@media only screen and (max-height: 37.5em) {
+  .mission {
+    height: auto;
+  }
+}/*# sourceMappingURL=homepage.module.css.map */
