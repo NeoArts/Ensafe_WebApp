@@ -19,7 +19,7 @@ const Menu = ({open, className, mobileScreen}) => {
                 <ul className={"menu " + ((open) ? ((mobileScreen) ? "open expanded-menu " : "open ") : "close ") + className} id="menu">
                 {Array.from(mainMenuOptions).map((item, index) => {
                         return (
-                            <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={"menu__item no-border " + (className === "" ? "menu-vertical" : "")}>
+                            <motion.button key={index} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={"menu__item no-border " + (className === "" ? "menu-vertical" : "")}>
                                 <Link to={item.link} className="menu__link" onClick={closeMenu}>{item.name}</Link>
                             </motion.button>
                         )

@@ -31,11 +31,11 @@ function Footer() {
                         </div>
                         <div className="footer__contact-container">
                             <div className="footer__social-media">
-                                <a href="https://www.facebook.com/Ensafe-SAS-113297934348513" target="_blank" rel="noreferrer" className="footer__social facebook">
+                                <a href="https://www.facebook.com/ensafecolombia?mibextid=ZbWKwL" target="_blank" rel="noreferrer" className="footer__social facebook">
                                     <FontAwesomeIcon icon={faFacebook} size='2x' />
                                     <p className="footer__social-media-text">Siguenos en Facebook</p>
                                 </a>
-                                <a href="https://www.instagram.com/ensafe_sas/" target="_blank" rel="noreferrer" className="footer__social instagram">
+                                <a href="https://www.instagram.com/ensafecolombia/" target="_blank" rel="noreferrer" className="footer__social instagram">
                                     <FontAwesomeIcon icon={faInstagram} size='2x' />
                                     <p className="footer__social-media-text">Siguenos en Instagram</p>
                                 </a>

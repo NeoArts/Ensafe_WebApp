@@ -1,14 +1,14 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import Homepage from './pages/Homepage/Homepage'
 import ProductsPage from './pages/ProductsPage'
 import PqrsPage from './pages/PqrsPage'
 import PrivacyPolicy from './pages/PrivacyPolicyPage'
 import ContactUs from './pages/ContactUs'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect, useLocation } from 'react-router-dom'
 import SocialMediaFloatingBanner from './components/Shared/SocialMediaFloatingBanner/SocialMediaFloatingBanner'
 import ProductDetailsPage from './components/ProductsPage/ProductDetailsPage';
 import Productspage from './pages/ProductsPage'
-import { Redirect } from 'react-router-dom'
+import ReactGA from 'react-ga';
 import NavBar from './pages/Shared/NavBar'
 
 
@@ -16,6 +16,15 @@ function App() {
 
   const LazyFooter = React.lazy(() => import('./pages/Shared/Footer'));
   
+  const TRACKING_ID = "G-LQPZPMMZMB"; // Replace with your GA4 Measurement ID
+  ReactGA.initialize(TRACKING_ID);
+
+  let location = useLocation();
+  
+  useEffect(() => {
+      ReactGA.set({ page: location.pathname });
+      ReactGA.pageview(location.pathname);
+  }, [location]);
 
   return (
     <div>
