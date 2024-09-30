@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import banner_01 from '../../assets/images/banner_01.webp'
-import banner_resp from '../../assets/images/Banner_resp.webp'
 import {
     Link
 } from 'react-router-dom'

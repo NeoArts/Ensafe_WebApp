@@ -29,7 +29,6 @@
 .company__info {
   width: 50%;
   margin-left: 2.5em;
-  height: 70vh;
   display: flex;
   flex-direction: column;
   background-image: url("../../../assets/images/waves.svg");
